@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { getAllPackets, savePacket, getAllProgress } from '../db'
 import { samplePacket } from '../data/samplePacket'
 import { syncNow } from '../api/sync'
+import { log, logError } from '../utils/debug'
 
 const PACKETS_JSON_URL = '/packets/packets.json'
 const ASSIGNMENTS_JSON_URL = '/packets/assignments.json'
@@ -22,13 +23,17 @@ export default function PacketList({ mode, onOpenPacket, onChangeContentMode }) 
           const packetsFromJson = await res.json()
           if (Array.isArray(packetsFromJson) && packetsFromJson.length > 0) {
             for (const p of packetsFromJson) await savePacket(p)
+            log('PacketList: loaded from JSON', { count: packetsFromJson.length })
           } else {
             await savePacket(samplePacket)
+            log('PacketList: JSON empty/invalid, using sample packet')
           }
         } else {
           await savePacket(samplePacket)
+          log('PacketList: fetch not ok', res.status, ', using sample packet')
         }
-      } catch {
+      } catch (e) {
+        logError('PacketList: load error', e)
         await savePacket(samplePacket)
       }
       const list = await getAllPackets()
@@ -38,6 +43,7 @@ export default function PacketList({ mode, onOpenPacket, onChangeContentMode }) 
       progress.forEach((p) => (map[p.packetId] = p))
       setProgressMap(map)
       setLoading(false)
+      log('PacketList: ready', { packets: list.length, progressCount: progress.length })
     }
     load()
   }, [])
@@ -47,8 +53,18 @@ export default function PacketList({ mode, onOpenPacket, onChangeContentMode }) 
     let cancelled = false
     fetch(ASSIGNMENTS_JSON_URL)
       .then((res) => (res.ok ? res.json() : []))
-      .then((data) => { if (!cancelled && Array.isArray(data)) setAssignments(data) })
-      .catch(() => { if (!cancelled) setAssignments([]) })
+      .then((data) => {
+        if (!cancelled && Array.isArray(data)) {
+          setAssignments(data)
+          log('PacketList: assignments loaded', { count: data.length })
+        }
+      })
+      .catch((e) => {
+        if (!cancelled) {
+          setAssignments([])
+          logError('PacketList: assignments fetch error', e)
+        }
+      })
     return () => { cancelled = true }
   }, [mode])
 
@@ -69,10 +85,12 @@ export default function PacketList({ mode, onOpenPacket, onChangeContentMode }) 
   async function handleSync() {
     setSyncStatus('syncing')
     setSyncMessage('')
+    log('PacketList: sync started')
     try {
       const result = await syncNow()
       setSyncStatus('done')
       setSyncMessage(result.message || (result.success ? 'Synced.' : 'Sync failed.'))
+      log('PacketList: sync done', { success: result.success, message: result.message, pushedCount: result.pushedCount, pulledCount: result.pulledPackets?.length ?? 0 })
       if (result.pulledPackets?.length) {
         const { savePacket } = await import('../db')
         for (const p of result.pulledPackets) await savePacket(p)
@@ -82,6 +100,7 @@ export default function PacketList({ mode, onOpenPacket, onChangeContentMode }) 
     } catch (e) {
       setSyncStatus('error')
       setSyncMessage(e.message || 'Sync failed.')
+      logError('PacketList: sync error', e)
     }
     setTimeout(() => setSyncStatus('idle'), 3000)
   }
@@ -116,8 +135,12 @@ export default function PacketList({ mode, onOpenPacket, onChangeContentMode }) 
           </p>
         )}
       </div>
-      <ul>
-        {displayPackets.map((p) => {
+      <ul role="list">
+        {displayPackets.length === 0 ? (
+          <li className="empty-state">
+            <p>{mode === 'school' ? 'No assignments yet.' : 'No packets available.'}</p>
+          </li>
+        ) : displayPackets.map((p) => {
           const prog = progressMap[p.id]
           const assignment = assignmentByPacketId[p.id]
           return (

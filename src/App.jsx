@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react'
 import { registerSW } from 'virtual:pwa-register'
 import { getStoredUser, logout as doLogout } from './utils/auth'
 import { getDefaultTier, setDefaultTier as saveDefaultTier, clearDefaultTier } from './utils/prefs'
+import { log } from './utils/debug'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
 import ContentModeScreen from './components/ContentModeScreen'
@@ -22,7 +23,11 @@ export default function App() {
   const [showProfile, setShowProfile] = useState(false)
   const [showHowItWorks, setShowHowItWorks] = useState(false)
 
-  const handleLogin = useCallback(() => setUser(getStoredUser()), [])
+  const handleLogin = useCallback(() => {
+    const u = getStoredUser()
+    setUser(u)
+    log('App: user logged in', { name: u?.name })
+  }, [])
 
   const handleLogout = useCallback(() => {
     doLogout()
@@ -32,30 +37,38 @@ export default function App() {
     setOpenPacketId(null)
     setOpenAssignment(null)
     setShowProfile(false)
+    log('App: logout, tier cleared')
   }, [])
 
   const handleContentModeSelect = useCallback((tierId) => {
     saveDefaultTier(tierId)
     setDefaultContentTier(tierId)
+    log('App: content mode selected', { tierId })
   }, [])
 
   const handleChangeContentMode = useCallback(() => {
     clearDefaultTier()
     setDefaultContentTier(null)
     setShowProfile(false)
+    log('App: change content mode (tier cleared)')
   }, [])
 
   const handleOpenPacket = (packetId, assignment) => {
     setOpenPacketId(packetId)
     setOpenAssignment(assignment ?? null)
+    log('App: open packet', { packetId, mode, assignment: assignment ? { syncBy: assignment.syncBy, maxTier: assignment.maxTier, courseName: assignment.courseName } : null })
   }
 
   const handleBack = () => {
     setOpenPacketId(null)
     setOpenAssignment(null)
+    log('App: back from packet')
   }
 
   const handleHome = useCallback(() => setShowProfile(false), [])
+
+  const setModeStudy = useCallback(() => { setMode('study'); log('App: mode', 'study') }, [])
+  const setModeSchool = useCallback(() => { setMode('school'); log('App: mode', 'school') }, [])
 
   if (!user) {
     return (
@@ -98,14 +111,14 @@ export default function App() {
                   <button
                     type="button"
                     className={mode === 'study' ? 'active' : ''}
-                    onClick={() => setMode('study')}
+                    onClick={setModeStudy}
                   >
                     Study
                   </button>
                   <button
                     type="button"
                     className={mode === 'school' ? 'active' : ''}
-                    onClick={() => setMode('school')}
+                    onClick={setModeSchool}
                   >
                     School
                   </button>
@@ -120,14 +133,14 @@ export default function App() {
                   <button
                     type="button"
                     className={mode === 'study' ? 'active' : ''}
-                    onClick={() => setMode('study')}
+                    onClick={setModeStudy}
                   >
                     Study
                   </button>
                   <button
                     type="button"
                     className={mode === 'school' ? 'active' : ''}
-                    onClick={() => setMode('school')}
+                    onClick={setModeSchool}
                   >
                     School
                   </button>

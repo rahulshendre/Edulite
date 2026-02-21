@@ -12,6 +12,7 @@ export default function Navbar({ onHome, onHowItWorks, onProfile, onLogout, show
           type="button"
           className={`navbar-link ${showProfile ? 'active' : ''}`}
           onClick={onProfile}
+          aria-current={showProfile ? 'page' : undefined}
         >
           Profile
         </button>

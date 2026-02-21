@@ -1,9 +1,17 @@
 import { CONTENT_TIERS } from '../constants/tiers'
 import { getAllowedTierIds, getStrictCapability } from '../utils/capability'
+import { log } from '../utils/debug'
 
 export default function ContentModeScreen({ onSelect }) {
   const allowedTierIds = getAllowedTierIds()
-  const { reason } = getStrictCapability()
+  const capability = getStrictCapability()
+  const { reason } = capability
+  log('ContentModeScreen: capability', { reason, maxTier: capability.maxTier, allowedTierIds })
+
+  const handleSelect = (tierId) => {
+    log('ContentModeScreen: tier selected', tierId)
+    onSelect(tierId)
+  }
 
   return (
     <section className="content-mode-screen">
@@ -18,7 +26,7 @@ export default function ContentModeScreen({ onSelect }) {
               key={tierId}
               type="button"
               className="tier-card"
-              onClick={() => onSelect(tierId)}
+              onClick={() => handleSelect(tierId)}
             >
               <span className="tier-label">{t.label}</span>
               <span className="tier-desc">{t.description}</span>

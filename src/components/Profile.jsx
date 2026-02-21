@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getStoredUser, login } from '../utils/auth'
+import { login } from '../utils/auth'
 import { getAllProgress } from '../db'
 
 export default function Profile({ user, onUpdateUser, onChangeContentMode, onLogout }) {
@@ -7,6 +7,11 @@ export default function Profile({ user, onUpdateUser, onChangeContentMode, onLog
   const [name, setName] = useState(user?.name ?? '')
   const [studentId, setStudentId] = useState(user?.studentId ?? '')
   const [completedCount, setCompletedCount] = useState(0)
+
+  useEffect(() => {
+    setName(user?.name ?? '')
+    setStudentId(user?.studentId ?? '')
+  }, [user?.name, user?.studentId])
 
   useEffect(() => {
     getAllProgress().then((all) => {

@@ -5,21 +5,24 @@
  */
 
 import { getAllProgress } from '../db'
+import { log } from '../utils/debug'
 
 /**
  * Push local progress to backend and pull new packets.
  * @returns {{ success: boolean, message: string, pulledPackets?: array }}
  */
 export async function syncNow() {
+  log('sync: start')
   // TODO: replace with real API
   const progress = await getAllProgress()
   // Simulate network delay
   await new Promise((r) => setTimeout(r, 800))
-  // Placeholder: no backend yet
-  return {
+  const result = {
     success: true,
     message: 'Sync placeholder — backend not connected. Progress is saved offline.',
     pushedCount: progress.length,
     pulledPackets: [],
   }
+  log('sync: result', result)
+  return result
 }

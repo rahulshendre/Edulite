@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { getPacket, getProgress, saveProgress } from '../db'
 import { CONTENT_TIERS } from '../constants/tiers'
 import { getAllowedTierIds, getAllowedTierIdsWithMax, getEffectiveTier, capTierByMax, getStrictCapability } from '../utils/capability'
+import { log } from '../utils/debug'
 
 export default function PacketView({ packetId, assignment, defaultTier, onBack }) {
   const [packet, setPacket] = useState(null)
@@ -18,12 +19,15 @@ export default function PacketView({ packetId, assignment, defaultTier, onBack }
       setPacket(p)
       setProgress(prog || null)
       if (prog?.answers) setAnswers(prog.answers)
+      let nextStep = 'tier'
       if (prog?.status === 'completed') {
         setStep('done')
         setContentTier(prog.contentTier || 'textOnly')
+        nextStep = 'done'
       } else if (prog?.contentTier) {
         setContentTier(prog.contentTier)
         setStep('content')
+        nextStep = 'content'
       } else if (defaultTier) {
         const effective = assignment?.maxTier
           ? capTierByMax(getEffectiveTier(defaultTier), assignment.maxTier)
@@ -37,10 +41,12 @@ export default function PacketView({ packetId, assignment, defaultTier, onBack }
         })
         setProgress({ packetId, status: 'in_progress', contentTier: effective, answers: {} })
         setStep('content')
+        nextStep = 'content'
       } else {
         setStep('tier')
       }
       setLoading(false)
+      log('PacketView: load', { packetId, found: !!p, step: nextStep, assignmentMaxTier: assignment?.maxTier })
     }
     load()
   }, [packetId, defaultTier, assignment?.maxTier])
@@ -50,6 +56,7 @@ export default function PacketView({ packetId, assignment, defaultTier, onBack }
   }
 
   const handleTierSelect = async (tierId) => {
+    log('PacketView: tier selected', { packetId, tierId })
     setContentTier(tierId)
     await saveProgress({
       packetId,
@@ -62,6 +69,7 @@ export default function PacketView({ packetId, assignment, defaultTier, onBack }
   }
 
   const handleComplete = async () => {
+    log('PacketView: completing', { packetId, contentTier })
     const completedAt = new Date().toISOString()
     await saveProgress({
       packetId,
@@ -72,13 +80,38 @@ export default function PacketView({ packetId, assignment, defaultTier, onBack }
       retryCount: (progress?.retryCount || 0) + 1,
     })
     setStep('feedback')
+    log('PacketView: step → feedback')
   }
 
   const isCorrect = (q) => answers[q.id] === q.correct
-  const yourAnswerText = (q) => (answers[q.id] != null ? q.options[answers[q.id]] : '—')
-  const correctAnswerText = (q) => q.options[q.correct]
+  const opts = (q) => Array.isArray(q.options) ? q.options : []
+  const yourAnswerText = (q) => {
+    const o = opts(q)
+    const idx = answers[q.id]
+    return idx != null && o[idx] != null ? o[idx] : '—'
+  }
+  const correctAnswerText = (q) => {
+    const o = opts(q)
+    const idx = q.correct
+    return idx != null && o[idx] != null ? o[idx] : '—'
+  }
 
-  if (loading || !packet) return <div className="loading">Loading…</div>
+  if (loading) return <div className="loading">Loading…</div>
+  if (!packet) {
+    return (
+      <div className="packet-view packet-not-found">
+        <header>
+          <button type="button" className="back" onClick={onBack} aria-label="Back to packet list">
+            ← Back
+          </button>
+        </header>
+        <p className="not-found-message">Packet not found.</p>
+        <button type="button" className="btn primary" onClick={onBack}>
+          Back to list
+        </button>
+      </div>
+    )
+  }
 
   const practice = packet.practice || []
   const assessment = packet.assessment || []
@@ -96,7 +129,7 @@ export default function PacketView({ packetId, assignment, defaultTier, onBack }
   return (
     <div className="packet-view">
       <header>
-        <button type="button" className="back" onClick={onBack}>
+        <button type="button" className="back" onClick={onBack} aria-label="Back to packet list">
           ← Back
         </button>
         <h1>{packet.title}</h1>
@@ -165,7 +198,7 @@ export default function PacketView({ packetId, assignment, defaultTier, onBack }
               </a>
             </div>
           )}
-          <button type="button" className="primary" onClick={() => setStep('practice')}>
+          <button type="button" className="primary" onClick={() => { log('PacketView: step → practice'); setStep('practice') }}>
             Start practice
           </button>
         </section>
@@ -192,7 +225,7 @@ export default function PacketView({ packetId, assignment, defaultTier, onBack }
               </div>
             </div>
           ))}
-          <button type="button" className="primary" onClick={() => setStep('assessment')}>
+          <button type="button" className="primary" onClick={() => { log('PacketView: step → assessment'); setStep('assessment') }}>
             Continue to assessment
           </button>
         </section>

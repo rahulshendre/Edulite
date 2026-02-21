@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { login } from '../utils/auth'
+import { log } from '../utils/debug'
 
 export default function Login({ onLogin }) {
   const [name, setName] = useState('')
@@ -10,6 +11,7 @@ export default function Login({ onLogin }) {
     const trimmed = name.trim()
     if (!trimmed) return
     login({ name: trimmed, studentId: studentId.trim() || undefined })
+    log('Login: submitted', { name: trimmed, studentId: studentId.trim() || '(none)' })
     onLogin()
   }
 

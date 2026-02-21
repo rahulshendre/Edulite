@@ -1,3 +1,5 @@
+import { log } from './debug'
+
 const STORAGE_KEY = 'learningPackets_user'
 
 /**
@@ -22,6 +24,7 @@ export function getStoredUser() {
 export function login(user) {
   const data = { ...user, loggedIn: true }
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+  log('auth: login', { name: user.name, hasStudentId: !!user.studentId })
 }
 
 /**
@@ -29,4 +32,5 @@ export function login(user) {
  */
 export function logout() {
   localStorage.removeItem(STORAGE_KEY)
+  log('auth: logout')
 }

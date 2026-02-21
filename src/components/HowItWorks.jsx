@@ -1,4 +1,14 @@
+import { useEffect } from 'react'
+
 export default function HowItWorks({ onClose }) {
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [onClose])
+
   return (
     <div className="how-it-works-overlay" onClick={onClose} role="dialog" aria-modal="true" aria-labelledby="how-it-works-title">
       <div className="how-it-works-modal" onClick={(e) => e.stopPropagation()}>

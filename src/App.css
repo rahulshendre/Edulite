@@ -1,10 +1,27 @@
 /* ===== App shell ===== */
 .app {
-  max-width: 480px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
   min-height: 100vh;
-  padding: var(--space-4);
+  margin: 0;
+  padding: var(--space-4) var(--space-5);
   padding-bottom: var(--space-12);
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .app {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-8);
+  }
+}
+
+@media (min-width: 900px) {
+  .app {
+    max-width: 720px;
+    padding: var(--space-8);
+  }
 }
 
 /* ===== Navbar ===== */
@@ -60,6 +77,16 @@
 
 .navbar-logout:hover {
   color: var(--error);
+}
+
+@media (min-width: 600px) {
+  .navbar-brand {
+    font-size: var(--text-xl);
+  }
+  .navbar-link {
+    font-size: var(--text-sm);
+    padding: var(--space-2) var(--space-3);
+  }
 }
 
 /* ===== Profile ===== */
@@ -420,6 +447,19 @@
   color: var(--text-muted);
 }
 
+/* ===== Packet not found ===== */
+.packet-view.packet-not-found {
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.packet-view .not-found-message {
+  margin-bottom: var(--space-4);
+  color: var(--text-muted);
+}
+.packet-view.packet-not-found .btn {
+  margin-top: var(--space-2);
+}
+
 /* ===== Packet list ===== */
 .packet-list h1 {
   font-size: var(--text-2xl);
@@ -550,6 +590,16 @@
   color: #fff;
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-full);
+}
+
+.packet-list .empty-state {
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+.packet-list .empty-state p {
+  margin: 0;
 }
 
 /* ===== Packet view ===== */
