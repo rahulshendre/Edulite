@@ -99,3 +99,25 @@ export function getEffectiveTier(savedTier) {
   const effectiveIndex = Math.min(savedIndex, maxIndex)
   return TIER_ORDER[effectiveIndex]
 }
+
+/**
+ * Cap a tier by a max tier (e.g. assignment maxTier). Returns the stricter of the two.
+ */
+export function capTierByMax(tier, maxTier) {
+  if (!maxTier) return tier
+  const i = TIER_ORDER.indexOf(tier)
+  const j = TIER_ORDER.indexOf(maxTier)
+  const idx = Math.min(i >= 0 ? i : 0, j >= 0 ? j : 0)
+  return TIER_ORDER[idx]
+}
+
+/**
+ * Tier ids allowed by capability, further limited by assignment maxTier when provided.
+ */
+export function getAllowedTierIdsWithMax(assignmentMaxTier) {
+  const ids = getAllowedTierIds()
+  if (!assignmentMaxTier) return ids
+  const maxIdx = TIER_ORDER.indexOf(assignmentMaxTier)
+  if (maxIdx < 0) return ids
+  return ids.filter((id) => TIER_ORDER.indexOf(id) <= maxIdx)
+}

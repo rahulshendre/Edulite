@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { getPacket, getProgress, saveProgress } from '../db'
 import { CONTENT_TIERS } from '../constants/tiers'
-import { getAllowedTierIds, getEffectiveTier, getStrictCapability } from '../utils/capability'
+import { getAllowedTierIds, getAllowedTierIdsWithMax, getEffectiveTier, capTierByMax, getStrictCapability } from '../utils/capability'
 
-export default function PacketView({ packetId, onBack }) {
+export default function PacketView({ packetId, assignment, defaultTier, onBack }) {
   const [packet, setPacket] = useState(null)
   const [progress, setProgress] = useState(null)
   const [contentTier, setContentTier] = useState(null)
-  const [step, setStep] = useState('tier') // tier | content | practice | assessment | done
+  const [step, setStep] = useState('tier') // tier | content | practice | assessment | feedback | done
   const [answers, setAnswers] = useState({})
   const [loading, setLoading] = useState(true)
 
@@ -24,13 +24,26 @@ export default function PacketView({ packetId, onBack }) {
       } else if (prog?.contentTier) {
         setContentTier(prog.contentTier)
         setStep('content')
+      } else if (defaultTier) {
+        const effective = assignment?.maxTier
+          ? capTierByMax(getEffectiveTier(defaultTier), assignment.maxTier)
+          : getEffectiveTier(defaultTier)
+        setContentTier(effective)
+        await saveProgress({
+          packetId,
+          status: 'in_progress',
+          contentTier: effective,
+          answers: {},
+        })
+        setProgress({ packetId, status: 'in_progress', contentTier: effective, answers: {} })
+        setStep('content')
       } else {
         setStep('tier')
       }
       setLoading(false)
     }
     load()
-  }, [packetId])
+  }, [packetId, defaultTier, assignment?.maxTier])
 
   const handleAnswer = (questionId, value) => {
     setAnswers((prev) => ({ ...prev, [questionId]: value }))
@@ -58,14 +71,19 @@ export default function PacketView({ packetId, onBack }) {
       completedAt,
       retryCount: (progress?.retryCount || 0) + 1,
     })
-    setStep('done')
+    setStep('feedback')
   }
+
+  const isCorrect = (q) => answers[q.id] === q.correct
+  const yourAnswerText = (q) => (answers[q.id] != null ? q.options[answers[q.id]] : '—')
+  const correctAnswerText = (q) => q.options[q.correct]
 
   if (loading || !packet) return <div className="loading">Loading…</div>
 
   const practice = packet.practice || []
   const assessment = packet.assessment || []
-  const effectiveTier = contentTier ? getEffectiveTier(contentTier) : 'textOnly'
+  let effectiveTier = contentTier ? getEffectiveTier(contentTier) : 'textOnly'
+  if (assignment?.maxTier) effectiveTier = capTierByMax(effectiveTier, assignment.maxTier)
   const allowedKeys = CONTENT_TIERS[effectiveTier]?.keys ?? ['text']
 
   const showText = allowedKeys.includes('text')
@@ -85,12 +103,17 @@ export default function PacketView({ packetId, onBack }) {
       </header>
 
       {step === 'tier' && (() => {
-        const allowedTierIds = getAllowedTierIds()
+        const allowedTierIds = getAllowedTierIdsWithMax(assignment?.maxTier ?? null)
         const { reason } = getStrictCapability()
         return (
           <section className="tier-select">
             <h2>Content mode</h2>
             <p className="tier-capability">{reason}</p>
+            {assignment?.maxTier && (
+              <p className="tier-assignment-max">
+                This assignment allows up to: {CONTENT_TIERS[assignment.maxTier]?.label ?? assignment.maxTier}.
+              </p>
+            )}
             <p className="tier-hint">Only options safe for your connection are shown.</p>
             <div className="tier-options">
               {allowedTierIds.map((tierId) => {
@@ -198,6 +221,56 @@ export default function PacketView({ packetId, onBack }) {
           ))}
           <button type="button" className="primary" onClick={handleComplete}>
             Submit & complete
+          </button>
+        </section>
+      )}
+
+      {step === 'feedback' && (
+        <section className="feedback">
+          <h2>Your results</h2>
+          {practice.length > 0 && (
+            <>
+              <h3>Practice</h3>
+              <ul className="feedback-list">
+                {practice.map((q, idx) => {
+                  const correct = isCorrect(q)
+                  return (
+                    <li key={q.id} className={correct ? 'correct' : 'incorrect'}>
+                      <span className="feedback-q">{idx + 1}. {q.question}</span>
+                      <span className="feedback-your">Your answer: {yourAnswerText(q)}</span>
+                      {!correct && (
+                        <span className="feedback-correct">Correct: {correctAnswerText(q)}</span>
+                      )}
+                      <span className="feedback-icon" aria-hidden>{correct ? '✓' : '✗'}</span>
+                    </li>
+                  )
+                })}
+              </ul>
+            </>
+          )}
+          {assessment.length > 0 && (
+            <>
+              <h3>Assessment</h3>
+              <ul className="feedback-list">
+                {assessment.map((q, idx) => {
+                  const correct = isCorrect(q)
+                  return (
+                    <li key={q.id} className={correct ? 'correct' : 'incorrect'}>
+                      <span className="feedback-q">{idx + 1}. {q.question}</span>
+                      <span className="feedback-your">Your answer: {yourAnswerText(q)}</span>
+                      {!correct && (
+                        <span className="feedback-correct">Correct: {correctAnswerText(q)}</span>
+                      )}
+                      <span className="feedback-icon" aria-hidden>{correct ? '✓' : '✗'}</span>
+                    </li>
+                  )
+                })}
+              </ul>
+            </>
+          )}
+          <p className="feedback-saved">Progress saved offline.</p>
+          <button type="button" className="primary" onClick={onBack}>
+            Back to list
           </button>
         </section>
       )}
