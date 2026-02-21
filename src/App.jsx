@@ -5,6 +5,7 @@ import { getDefaultTier, setDefaultTier as saveDefaultTier, clearDefaultTier } f
 import { log } from './utils/debug'
 import PathChoiceScreen from './components/PathChoiceScreen'
 import SchoolRoleScreen from './components/SchoolRoleScreen'
+import SchoolSelectScreen from './components/SchoolSelectScreen'
 import SchoolStudentLogin from './components/SchoolStudentLogin'
 import SchoolTeacherLogin from './components/SchoolTeacherLogin'
 import Login from './components/Login'
@@ -19,6 +20,7 @@ import './App.css'
 
 const SESSION_PATH_KEY = 'edulite_path'
 const SESSION_SCHOOL_ROLE_KEY = 'edulite_school_role'
+const SESSION_SCHOOL_KEY = 'edulite_school'
 
 function getStoredPath() {
   try {
@@ -34,6 +36,16 @@ function getStoredSchoolRole() {
     return null
   }
 }
+function getStoredSchool() {
+  try {
+    const raw = sessionStorage.getItem(SESSION_SCHOOL_KEY)
+    if (!raw) return null
+    const data = JSON.parse(raw)
+    return data && data.id && data.name ? data : null
+  } catch {
+    return null
+  }
+}
 
 registerSW({ immediate: true })
 
@@ -41,6 +53,7 @@ export default function App() {
   const [user, setUser] = useState(getStoredUser)
   const [pathChoice, setPathChoice] = useState(getStoredPath)
   const [schoolRole, setSchoolRole] = useState(getStoredSchoolRole)
+  const [selectedSchool, setSelectedSchool] = useState(getStoredSchool)
   const [defaultContentTier, setDefaultContentTier] = useState(getDefaultTier)
   const [openPacketId, setOpenPacketId] = useState(null)
   const [openAssignment, setOpenAssignment] = useState(null)
@@ -64,6 +77,7 @@ export default function App() {
     setUser(null)
     setPathChoice(null)
     setSchoolRole(null)
+    setSelectedSchool(null)
     setDefaultContentTier(null)
     setOpenPacketId(null)
     setOpenAssignment(null)
@@ -98,6 +112,14 @@ export default function App() {
   const goBackToSchoolRole = useCallback(() => {
     setSchoolRole(null)
     try { sessionStorage.removeItem(SESSION_SCHOOL_ROLE_KEY) } catch {}
+  }, [])
+  const setSchool = useCallback((school) => {
+    setSelectedSchool(school)
+    try { sessionStorage.setItem(SESSION_SCHOOL_KEY, JSON.stringify(school)) } catch {}
+  }, [])
+  const goBackToSchoolSelect = useCallback(() => {
+    setSelectedSchool(null)
+    try { sessionStorage.removeItem(SESSION_SCHOOL_KEY) } catch {}
   }, [])
 
   const handleContentModeSelect = useCallback((tierId) => {
@@ -146,11 +168,14 @@ export default function App() {
             onBack={goBackToPathChoice}
           />
         )}
-        {pathChoice === 'school' && schoolRole === 'student' && (
-          <SchoolStudentLogin onLogin={handleLogin} onBack={goBackToSchoolRole} />
+        {pathChoice === 'school' && schoolRole && !selectedSchool && (
+          <SchoolSelectScreen onSelect={setSchool} onBack={goBackToSchoolRole} />
         )}
-        {pathChoice === 'school' && schoolRole === 'teacher' && (
-          <SchoolTeacherLogin onLogin={handleLogin} onBack={goBackToSchoolRole} />
+        {pathChoice === 'school' && schoolRole === 'student' && selectedSchool && (
+          <SchoolStudentLogin school={selectedSchool} onLogin={handleLogin} onBack={goBackToSchoolSelect} />
+        )}
+        {pathChoice === 'school' && schoolRole === 'teacher' && selectedSchool && (
+          <SchoolTeacherLogin school={selectedSchool} onLogin={handleLogin} onBack={goBackToSchoolSelect} />
         )}
       </div>
     )

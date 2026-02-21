@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { getPacket, getProgress, saveProgress } from '../db'
 import { CONTENT_TIERS } from '../constants/tiers'
 import { getAllowedTierIds, getAllowedTierIdsWithMax, getEffectiveTier, capTierByMax, getStrictCapability } from '../utils/capability'
 import { log, logError } from '../utils/debug'
+import { speak, stop, pause, resume, isSupported } from '../utils/speech'
 
 export default function PacketView({ userId, packetId, assignment, defaultTier, onBack }) {
   const [packet, setPacket] = useState(null)
@@ -11,6 +12,7 @@ export default function PacketView({ userId, packetId, assignment, defaultTier, 
   const [step, setStep] = useState('tier') // tier | content | practice | assessment | feedback | done
   const [answers, setAnswers] = useState({})
   const [loading, setLoading] = useState(true)
+  const [speechState, setSpeechState] = useState('idle') // 'idle' | 'speaking' | 'paused'
 
   useEffect(() => {
     if (!userId) {
@@ -118,6 +120,55 @@ export default function PacketView({ userId, packetId, assignment, defaultTier, 
     }
   }
 
+  // Stop TTS when step changes or component unmounts
+  useEffect(() => {
+    stop()
+    setSpeechState('idle')
+    return () => stop()
+  }, [step])
+
+  const getTextToSpeak = useCallback(() => {
+    if (!packet) return ''
+    if (step === 'content') {
+      const raw = (packet.content?.text || '').replace(/# /g, '').replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\n/g, ' ').replace(/\s+/g, ' ').trim()
+      return raw ? `${packet.title}. ${raw}` : packet.title
+    }
+    if (step === 'practice' && (packet.practice?.length ?? 0) > 0) {
+      const parts = ['Practice.']
+      packet.practice.forEach((q, i) => {
+        parts.push(`Question ${i + 1}. ${q.question}`)
+        if (Array.isArray(q.options) && q.options.length) parts.push(`Options: ${q.options.join(', ')}`)
+      })
+      return parts.join(' ')
+    }
+    if (step === 'assessment' && (packet.assessment?.length ?? 0) > 0) {
+      const parts = ['Assessment.']
+      packet.assessment.forEach((q, i) => {
+        parts.push(`Question ${i + 1}. ${q.question}`)
+        if (Array.isArray(q.options) && q.options.length) parts.push(`Options: ${q.options.join(', ')}`)
+      })
+      return parts.join(' ')
+    }
+    return ''
+  }, [packet, step])
+
+  const handleReadAloud = () => {
+    const text = getTextToSpeak()
+    if (!text) return
+    if (speechState === 'paused') {
+      resume()
+      setSpeechState('speaking')
+      return
+    }
+    speak(text, { onEnd: () => setSpeechState('idle') })
+    setSpeechState('speaking')
+  }
+
+  const handlePause = () => {
+    pause()
+    setSpeechState('paused')
+  }
+
   const isCorrect = (q) => answers[q.id] === q.correct
   const opts = (q) => Array.isArray(q.options) ? q.options : []
   const yourAnswerText = (q) => {
@@ -169,7 +220,33 @@ export default function PacketView({ userId, packetId, assignment, defaultTier, 
         <button type="button" className="back" onClick={onBack} aria-label="Back to packet list">
           ← Back
         </button>
-        <h1>{packet.title}</h1>
+        <div className="packet-view-header-row">
+          <h1>{packet.title}</h1>
+          {isSupported() && getTextToSpeak() && (
+            <div className="read-aloud-controls">
+              <button
+                type="button"
+                className="read-aloud-btn"
+                onClick={handleReadAloud}
+                aria-label={speechState === 'paused' ? 'Resume' : 'Read aloud'}
+                title={speechState === 'paused' ? 'Resume' : 'Read aloud'}
+              >
+                {speechState === 'paused' ? '▶️ Resume' : '🔊 Read aloud'}
+              </button>
+              {speechState === 'speaking' && (
+                <button
+                  type="button"
+                  className="read-aloud-btn read-aloud-pause"
+                  onClick={handlePause}
+                  aria-label="Pause"
+                  title="Pause"
+                >
+                  ⏸️ Pause
+                </button>
+              )}
+            </div>
+          )}
+        </div>
       </header>
 
       <nav className="packet-step-indicator" aria-label="Learning steps">

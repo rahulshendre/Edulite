@@ -6,7 +6,7 @@ import { log } from '../utils/debug'
 const MOCK_GR = 'student1'
 const MOCK_PASSWORD = 'pass'
 
-export default function SchoolStudentLogin({ onLogin, onBack }) {
+export default function SchoolStudentLogin({ school, onLogin, onBack }) {
   const [grNo, setGrNo] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -29,6 +29,7 @@ export default function SchoolStudentLogin({ onLogin, onBack }) {
       role: 'student',
       grNo: trimmedGr,
       name: `Student ${trimmedGr}`,
+      ...(school && { schoolId: school.id, schoolName: school.name }),
     }
     login(user)
     log('SchoolStudentLogin: submitted', { grNo: trimmedGr })
@@ -42,7 +43,8 @@ export default function SchoolStudentLogin({ onLogin, onBack }) {
           ← Back
         </button>
         <h1>School — Student</h1>
-        <p className="login-subtitle">Sign in with your GR number and password.</p>
+        {school && <p className="login-subtitle">Signing in to {school.name}</p>}
+        <p className="login-subtitle">Enter your GR number and password.</p>
         <form onSubmit={handleSubmit} className="login-form">
           <label htmlFor="school-gr">GR number</label>
           <input

@@ -811,11 +811,59 @@
   color: var(--primary);
 }
 
+.packet-view-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
 .packet-view h1 {
   font-size: var(--text-xl);
   font-weight: var(--font-bold);
   color: var(--text);
   line-height: var(--leading-snug);
+  margin: 0;
+}
+
+.packet-view .read-aloud-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--primary);
+  background: var(--primary-muted);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+.packet-view .read-aloud-btn:hover {
+  background: var(--primary);
+  color: var(--primary-contrast, #fff);
+}
+
+.packet-view .read-aloud-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.packet-view .read-aloud-pause {
+  color: var(--text-muted);
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.packet-view .read-aloud-pause:hover {
+  background: var(--border-subtle);
+  color: var(--text);
+  border-color: var(--text-muted);
 }
 
 /* Tier selection */
