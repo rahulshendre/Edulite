@@ -69,7 +69,7 @@ export function getStrictCapability() {
 
   if (typeof navigator.deviceMemory === 'number' && navigator.deviceMemory < 4 && tierIndex(maxTier) > 1) {
     maxTier = 'textAndImages'
-    reason = reason.replace('— full content allowed.', '— capped to text + images for your device.')
+    reason = 'Limited device memory — text and images only.'
   }
 
   return {

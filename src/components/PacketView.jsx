@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { getPacket, getProgress, saveProgress } from '../db'
 import { CONTENT_TIERS } from '../constants/tiers'
 import { getAllowedTierIds, getAllowedTierIdsWithMax, getEffectiveTier, capTierByMax, getStrictCapability } from '../utils/capability'
-import { log } from '../utils/debug'
+import { log, logError } from '../utils/debug'
 
 export default function PacketView({ packetId, assignment, defaultTier, onBack }) {
   const [packet, setPacket] = useState(null)
@@ -14,39 +14,54 @@ export default function PacketView({ packetId, assignment, defaultTier, onBack }
 
   useEffect(() => {
     async function load() {
-      const p = await getPacket(packetId)
-      const prog = await getProgress(packetId)
-      setPacket(p)
-      setProgress(prog || null)
-      if (prog?.answers) setAnswers(prog.answers)
-      let nextStep = 'tier'
-      if (prog?.status === 'completed') {
-        setStep('done')
-        setContentTier(prog.contentTier || 'textOnly')
-        nextStep = 'done'
-      } else if (prog?.contentTier) {
-        setContentTier(prog.contentTier)
-        setStep('content')
-        nextStep = 'content'
-      } else if (defaultTier) {
-        const effective = assignment?.maxTier
-          ? capTierByMax(getEffectiveTier(defaultTier), assignment.maxTier)
-          : getEffectiveTier(defaultTier)
-        setContentTier(effective)
-        await saveProgress({
-          packetId,
-          status: 'in_progress',
-          contentTier: effective,
-          answers: {},
-        })
-        setProgress({ packetId, status: 'in_progress', contentTier: effective, answers: {} })
-        setStep('content')
-        nextStep = 'content'
-      } else {
-        setStep('tier')
+      try {
+        const p = await getPacket(packetId)
+        const prog = await getProgress(packetId)
+        setPacket(p)
+        setProgress(prog || null)
+        if (prog?.answers) setAnswers(prog.answers)
+        let nextStep = 'tier'
+        if (prog?.status === 'completed') {
+          setStep('done')
+          setContentTier(prog.contentTier || 'textOnly')
+          nextStep = 'done'
+        } else if (prog?.contentTier) {
+          let effective = getEffectiveTier(prog.contentTier)
+          if (assignment?.maxTier) effective = capTierByMax(effective, assignment.maxTier)
+          setContentTier(effective)
+          await saveProgress({
+            packetId,
+            status: 'in_progress',
+            contentTier: effective,
+            answers: prog.answers ?? {},
+          })
+          setProgress({ packetId, status: 'in_progress', contentTier: effective, answers: prog.answers ?? {} })
+          setStep('content')
+          nextStep = 'content'
+        } else if (defaultTier) {
+          const effective = assignment?.maxTier
+            ? capTierByMax(getEffectiveTier(defaultTier), assignment.maxTier)
+            : getEffectiveTier(defaultTier)
+          setContentTier(effective)
+          await saveProgress({
+            packetId,
+            status: 'in_progress',
+            contentTier: effective,
+            answers: {},
+          })
+          setProgress({ packetId, status: 'in_progress', contentTier: effective, answers: {} })
+          setStep('content')
+          nextStep = 'content'
+        } else {
+          setStep('tier')
+        }
+        log('PacketView: load', { packetId, found: !!p, step: nextStep, assignmentMaxTier: assignment?.maxTier })
+      } catch (e) {
+        logError('PacketView: load failed', e)
+        setPacket(null)
+      } finally {
+        setLoading(false)
       }
-      setLoading(false)
-      log('PacketView: load', { packetId, found: !!p, step: nextStep, assignmentMaxTier: assignment?.maxTier })
     }
     load()
   }, [packetId, defaultTier, assignment?.maxTier])
@@ -56,31 +71,41 @@ export default function PacketView({ packetId, assignment, defaultTier, onBack }
   }
 
   const handleTierSelect = async (tierId) => {
-    log('PacketView: tier selected', { packetId, tierId })
-    setContentTier(tierId)
-    await saveProgress({
-      packetId,
-      status: 'in_progress',
-      contentTier: tierId,
-      answers: progress?.answers ?? {},
-    })
-    setProgress((prev) => ({ ...prev, contentTier: tierId, status: 'in_progress' }))
-    setStep('content')
+    let effective = getEffectiveTier(tierId)
+    if (assignment?.maxTier) effective = capTierByMax(effective, assignment.maxTier)
+    log('PacketView: tier selected', { packetId, tierId, effective })
+    setContentTier(effective)
+    try {
+      await saveProgress({
+        packetId,
+        status: 'in_progress',
+        contentTier: effective,
+        answers: progress?.answers ?? {},
+      })
+      setProgress((prev) => ({ ...prev, contentTier: effective, status: 'in_progress' }))
+      setStep('content')
+    } catch (e) {
+      logError('PacketView: saveProgress failed (tier select)', e)
+    }
   }
 
   const handleComplete = async () => {
     log('PacketView: completing', { packetId, contentTier })
     const completedAt = new Date().toISOString()
-    await saveProgress({
-      packetId,
-      status: 'completed',
-      contentTier,
-      answers,
-      completedAt,
-      retryCount: (progress?.retryCount || 0) + 1,
-    })
-    setStep('feedback')
-    log('PacketView: step → feedback')
+    try {
+      await saveProgress({
+        packetId,
+        status: 'completed',
+        contentTier,
+        answers,
+        completedAt,
+        retryCount: (progress?.retryCount || 0) + 1,
+      })
+      setStep('feedback')
+      log('PacketView: step → feedback')
+    } catch (e) {
+      logError('PacketView: saveProgress failed (complete)', e)
+    }
   }
 
   const isCorrect = (q) => answers[q.id] === q.correct

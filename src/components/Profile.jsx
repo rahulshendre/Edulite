@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { login } from '../utils/auth'
 import { getAllProgress } from '../db'
+import { logError } from '../utils/debug'
 
 export default function Profile({ user, onUpdateUser, onChangeContentMode, onLogout }) {
   const [editing, setEditing] = useState(false)
@@ -14,10 +15,15 @@ export default function Profile({ user, onUpdateUser, onChangeContentMode, onLog
   }, [user?.name, user?.studentId])
 
   useEffect(() => {
-    getAllProgress().then((all) => {
-      const count = all.filter((p) => p.status === 'completed').length
-      setCompletedCount(count)
-    })
+    getAllProgress()
+      .then((all) => {
+        const count = all.filter((p) => p.status === 'completed').length
+        setCompletedCount(count)
+      })
+      .catch((e) => {
+        logError('Profile: getAllProgress failed', e)
+        setCompletedCount(0)
+      })
   }, [])
 
   const handleSave = () => {
