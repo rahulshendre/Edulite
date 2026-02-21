@@ -7,7 +7,7 @@ import { log, logError } from '../utils/debug'
 const PACKETS_JSON_URL = '/packets/packets.json'
 const ASSIGNMENTS_JSON_URL = '/packets/assignments.json'
 
-export default function PacketList({ mode, onOpenPacket, onChangeContentMode }) {
+export default function PacketList({ userId, mode, onOpenPacket, onChangeContentMode }) {
   const [packets, setPackets] = useState([])
   const [assignments, setAssignments] = useState([]) // { packetId, syncBy, courseName, maxTier? }[]
   const [progressMap, setProgressMap] = useState({})
@@ -38,7 +38,7 @@ export default function PacketList({ mode, onOpenPacket, onChangeContentMode }) 
       }
       const list = await getAllPackets()
       setPackets(list)
-      const progress = await getAllProgress()
+      const progress = userId ? await getAllProgress(userId) : []
       const map = {}
       progress.forEach((p) => (map[p.packetId] = p))
       setProgressMap(map)
@@ -46,7 +46,7 @@ export default function PacketList({ mode, onOpenPacket, onChangeContentMode }) 
       log('PacketList: ready', { packets: list.length, progressCount: progress.length })
     }
     load()
-  }, [])
+  }, [userId])
 
   useEffect(() => {
     if (mode !== 'school') return
@@ -83,11 +83,12 @@ export default function PacketList({ mode, onOpenPacket, onChangeContentMode }) 
   }
 
   async function handleSync() {
+    if (!userId) return
     setSyncStatus('syncing')
     setSyncMessage('')
     log('PacketList: sync started')
     try {
-      const result = await syncNow()
+      const result = await syncNow(userId)
       setSyncStatus('done')
       setSyncMessage(result.message || (result.success ? 'Synced.' : 'Sync failed.'))
       log('PacketList: sync done', { success: result.success, message: result.message, pushedCount: result.pushedCount, pulledCount: result.pulledPackets?.length ?? 0 })
@@ -97,6 +98,10 @@ export default function PacketList({ mode, onOpenPacket, onChangeContentMode }) 
         const list = await getAllPackets()
         setPackets(list)
       }
+      const progress = await getAllProgress(userId)
+      const map = {}
+      progress.forEach((p) => (map[p.packetId] = p))
+      setProgressMap(map)
     } catch (e) {
       setSyncStatus('error')
       setSyncMessage(e.message || 'Sync failed.')

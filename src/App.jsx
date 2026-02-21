@@ -82,6 +82,7 @@ export default function App() {
     <div className="app">
       {openPacketId ? (
         <PacketView
+          userId={user?.id}
           packetId={openPacketId}
           assignment={openAssignment}
           defaultTier={defaultContentTier}
@@ -159,6 +160,7 @@ export default function App() {
                 </div>
               </div>
               <PacketList
+                userId={user?.id}
                 mode={mode}
                 onOpenPacket={handleOpenPacket}
                 onChangeContentMode={handleChangeContentMode}

@@ -15,7 +15,8 @@ export default function Profile({ user, onUpdateUser, onChangeContentMode, onLog
   }, [user?.name, user?.studentId])
 
   useEffect(() => {
-    getAllProgress()
+    if (!user?.id) return
+    getAllProgress(user.id)
       .then((all) => {
         const count = all.filter((p) => p.status === 'completed').length
         setCompletedCount(count)
@@ -24,7 +25,7 @@ export default function Profile({ user, onUpdateUser, onChangeContentMode, onLog
         logError('Profile: getAllProgress failed', e)
         setCompletedCount(0)
       })
-  }, [])
+  }, [user?.id])
 
   const handleSave = () => {
     const trimmedName = name.trim()

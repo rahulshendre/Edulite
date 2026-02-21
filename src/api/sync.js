@@ -9,12 +9,14 @@ import { log } from '../utils/debug'
 
 /**
  * Push local progress to backend and pull new packets.
+ * @param {string} userId - Current user id (progress is scoped per user).
  * @returns {{ success: boolean, message: string, pulledPackets?: array }}
  */
-export async function syncNow() {
-  log('sync: start')
+export async function syncNow(userId) {
+  log('sync: start', { userId })
+  if (!userId) return { success: false, message: 'Not signed in.', pushedCount: 0, pulledPackets: [] }
   // TODO: replace with real API
-  const progress = await getAllProgress()
+  const progress = await getAllProgress(userId)
   // Simulate network delay
   await new Promise((r) => setTimeout(r, 800))
   const result = {
