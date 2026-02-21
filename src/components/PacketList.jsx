@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { getAllPackets, savePacket, getAllProgress, getTranslation } from '../db'
+import { getAllPackets, savePacket, getAllProgress } from '../db'
+import { getPacketInLocale } from '../utils/translate'
 import { samplePacket } from '../data/samplePacket'
 import { syncNow } from '../api/sync'
 import { log, logError } from '../utils/debug'
@@ -82,22 +83,17 @@ export default function PacketList({ userId, mode, onOpenPacket, onChangeContent
     return () => { cancelled = true }
   }, [mode])
 
-  // Load translated titles from cache when locale is not English
+  // Preload full translation for each packet (cache or API) so list shows all titles in locale
   useEffect(() => {
     if (!locale || locale === 'en' || !packets.length) {
       setTitleMap({})
       return
     }
     let cancelled = false
-    const map = {}
-    Promise.all(
-      packets.map(async (p) => {
-        const cached = await getTranslation(locale, p.id)
-        if (cancelled) return
-        if (cached?.packet?.title) map[p.id] = cached.packet.title
-      })
-    ).then(() => {
-      if (!cancelled) setTitleMap(map)
+    packets.forEach(async (p) => {
+      const translated = await getPacketInLocale(p.id, locale)
+      if (cancelled) return
+      setTitleMap((prev) => ({ ...prev, [p.id]: translated?.title ?? p.title }))
     })
     return () => { cancelled = true }
   }, [locale, packets])

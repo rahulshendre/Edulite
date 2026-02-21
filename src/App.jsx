@@ -16,6 +16,7 @@ import PacketView from './components/PacketView'
 import Profile from './components/Profile'
 import TeacherDashboard from './components/TeacherDashboard'
 import HowItWorks from './components/HowItWorks'
+import AskAI from './components/AskAI'
 import { getPreferredLocale, setStoredLocale } from './constants/locales'
 import './App.css'
 
@@ -63,6 +64,7 @@ export default function App() {
   const [showHowItWorks, setShowHowItWorks] = useState(false)
   const [locale, setLocale] = useState(() => getPreferredLocale())
   const [isOnline, setIsOnline] = useState(() => typeof navigator !== 'undefined' && navigator.onLine)
+  const [showAskAI, setShowAskAI] = useState(false)
 
   useEffect(() => {
     const setOnline = () => setIsOnline(true)
@@ -225,6 +227,10 @@ export default function App() {
         />
         <TeacherDashboard user={user} onLogout={handleLogout} />
         {showHowItWorks && <HowItWorks onClose={() => setShowHowItWorks(false)} />}
+        <button type="button" className="ask-ai-fab" onClick={() => setShowAskAI(true)} aria-label="Ask AI">
+          Ask AI
+        </button>
+        <AskAI open={showAskAI} onClose={() => setShowAskAI(false)} openPacketId={null} locale={locale} />
       </div>
     )
   }
@@ -326,6 +332,10 @@ export default function App() {
           {showHowItWorks && <HowItWorks onClose={() => setShowHowItWorks(false)} />}
         </>
       )}
+      <button type="button" className="ask-ai-fab" onClick={() => setShowAskAI(true)} aria-label="Ask AI">
+        Ask AI
+      </button>
+      <AskAI open={showAskAI} onClose={() => setShowAskAI(false)} openPacketId={openPacketId} locale={locale} />
     </div>
   )
 }
