@@ -18,6 +18,7 @@ export default function Login({ onLogin }) {
   return (
     <div className="login-screen">
       <div className="login-card">
+        <img src="/graduation-cap-icon.svg" alt="" className="login-logo" aria-hidden />
         <h1>Learning Packets</h1>
         <p className="login-subtitle">Learn offline. Sync when you can.</p>
         <form onSubmit={handleSubmit} className="login-form">

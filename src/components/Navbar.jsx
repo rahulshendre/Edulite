@@ -2,6 +2,7 @@ export default function Navbar({ onHome, onHowItWorks, onProfile, onLogout, show
   return (
     <nav className="navbar">
       <button type="button" className="navbar-brand" onClick={onHome}>
+        <img src="/graduation-cap-icon.svg" alt="" className="navbar-brand-icon" aria-hidden />
         Learning Packets
       </button>
       <div className="navbar-links">

@@ -36,11 +36,20 @@
 }
 
 .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   font-size: var(--text-lg);
   font-weight: var(--font-bold);
   color: var(--text);
   background: none;
   padding: var(--space-1) 0;
+}
+
+.navbar-brand-icon {
+  width: 28px;
+  height: auto;
+  flex-shrink: 0;
 }
 
 .navbar-brand:hover {
@@ -245,6 +254,13 @@
   border-radius: var(--radius-xl);
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-lg);
+}
+
+.login-logo {
+  width: 56px;
+  height: auto;
+  margin-bottom: var(--space-3);
+  display: block;
 }
 
 .login-card h1 {
