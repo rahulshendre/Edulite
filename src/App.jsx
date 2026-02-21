@@ -16,6 +16,7 @@ import PacketView from './components/PacketView'
 import Profile from './components/Profile'
 import TeacherDashboard from './components/TeacherDashboard'
 import HowItWorks from './components/HowItWorks'
+import { getPreferredLocale, setStoredLocale } from './constants/locales'
 import './App.css'
 
 const SESSION_PATH_KEY = 'edulite_path'
@@ -60,6 +61,19 @@ export default function App() {
   const [mode, setMode] = useState('study')
   const [showProfile, setShowProfile] = useState(false)
   const [showHowItWorks, setShowHowItWorks] = useState(false)
+  const [locale, setLocale] = useState(() => getPreferredLocale())
+  const [isOnline, setIsOnline] = useState(() => typeof navigator !== 'undefined' && navigator.onLine)
+
+  useEffect(() => {
+    const setOnline = () => setIsOnline(true)
+    const setOffline = () => setIsOnline(false)
+    window.addEventListener('online', setOnline)
+    window.addEventListener('offline', setOffline)
+    return () => {
+      window.removeEventListener('online', setOnline)
+      window.removeEventListener('offline', setOffline)
+    }
+  }, [])
 
   useEffect(() => {
     if (user?.path === 'school' && user?.role === 'student') setMode('school')
@@ -117,6 +131,11 @@ export default function App() {
     setSelectedSchool(school)
     try { sessionStorage.setItem(SESSION_SCHOOL_KEY, JSON.stringify(school)) } catch {}
   }, [])
+
+  const handleLocaleChange = useCallback((code) => {
+    setStoredLocale(code)
+    setLocale(code)
+  }, [])
   const goBackToSchoolSelect = useCallback(() => {
     setSelectedSchool(null)
     try { sessionStorage.removeItem(SESSION_SCHOOL_KEY) } catch {}
@@ -152,9 +171,19 @@ export default function App() {
   const setModeStudy = useCallback(() => { setMode('study'); log('App: mode', 'study') }, [])
   const setModeSchool = useCallback(() => { setMode('school'); log('App: mode', 'school') }, [])
 
+  const connectionBar = (
+    <div
+      className={`connection-status connection-status--${isOnline ? 'online' : 'offline'}`}
+      role="status"
+      aria-label={isOnline ? 'Online' : 'Offline'}
+      title={isOnline ? 'Online' : 'Offline'}
+    />
+  )
+
   if (!user) {
     return (
       <div className="app">
+        {connectionBar}
         {pathChoice === null && (
           <PathChoiceScreen onSelectSchool={setPathSchool} onSelectStudy={setPathStudy} />
         )}
@@ -184,12 +213,15 @@ export default function App() {
   if (user.role === 'teacher') {
     return (
       <div className="app">
+        {connectionBar}
         <Navbar
           onHome={() => {}}
           onHowItWorks={() => setShowHowItWorks(true)}
           onProfile={() => {}}
           onLogout={handleLogout}
           showProfile={false}
+          locale={locale}
+          onLocaleChange={handleLocaleChange}
         />
         <TeacherDashboard user={user} onLogout={handleLogout} />
         {showHowItWorks && <HowItWorks onClose={() => setShowHowItWorks(false)} />}
@@ -199,6 +231,7 @@ export default function App() {
 
   return (
     <div className="app">
+      {connectionBar}
       {openPacketId ? (
         <PacketView
           userId={user?.id}
@@ -215,6 +248,8 @@ export default function App() {
             onProfile={() => setShowProfile(true)}
             onLogout={handleLogout}
             showProfile={showProfile}
+            locale={locale}
+            onLocaleChange={handleLocaleChange}
           />
 
           {showProfile ? (
@@ -283,6 +318,7 @@ export default function App() {
                 mode={mode}
                 onOpenPacket={handleOpenPacket}
                 onChangeContentMode={handleChangeContentMode}
+                locale={locale}
               />
             </>
           )}

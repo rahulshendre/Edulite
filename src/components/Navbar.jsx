@@ -1,4 +1,6 @@
-export default function Navbar({ onHome, onHowItWorks, onProfile, onLogout, showProfile }) {
+import LanguageSelect from './LanguageSelect'
+
+export default function Navbar({ onHome, onHowItWorks, onProfile, onLogout, showProfile, locale, onLocaleChange }) {
   return (
     <nav className="navbar">
       <button type="button" className="navbar-brand" onClick={onHome}>
@@ -9,6 +11,9 @@ export default function Navbar({ onHome, onHowItWorks, onProfile, onLogout, show
         <button type="button" className="navbar-link" onClick={onHowItWorks}>
           How it works
         </button>
+        {locale != null && onLocaleChange && (
+          <LanguageSelect value={locale} onChange={onLocaleChange} className="navbar-lang" />
+        )}
         <button
           type="button"
           className={`navbar-link ${showProfile ? 'active' : ''}`}

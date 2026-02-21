@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getAllPackets, savePacket, getAllProgress } from '../db'
+import { getAllPackets, savePacket, getAllProgress, getTranslation } from '../db'
 import { samplePacket } from '../data/samplePacket'
 import { syncNow } from '../api/sync'
 import { log, logError } from '../utils/debug'
@@ -7,10 +7,11 @@ import { log, logError } from '../utils/debug'
 const PACKETS_JSON_URL = (typeof import.meta.env?.BASE_URL === 'string' ? import.meta.env.BASE_URL : '') + 'packets/packets.json'
 const ASSIGNMENTS_JSON_URL = (typeof import.meta.env?.BASE_URL === 'string' ? import.meta.env.BASE_URL : '') + 'packets/assignments.json'
 
-export default function PacketList({ userId, mode, onOpenPacket, onChangeContentMode }) {
+export default function PacketList({ userId, mode, onOpenPacket, onChangeContentMode, locale }) {
   const [packets, setPackets] = useState([])
   const [assignments, setAssignments] = useState([]) // { packetId, syncBy, courseName, maxTier? }[]
   const [progressMap, setProgressMap] = useState({})
+  const [titleMap, setTitleMap] = useState({}) // packetId -> translated title (from cache)
   const [loading, setLoading] = useState(true)
   const [syncStatus, setSyncStatus] = useState('idle') // idle | syncing | done | error
   const [syncMessage, setSyncMessage] = useState('')
@@ -80,6 +81,26 @@ export default function PacketList({ userId, mode, onOpenPacket, onChangeContent
       })
     return () => { cancelled = true }
   }, [mode])
+
+  // Load translated titles from cache when locale is not English
+  useEffect(() => {
+    if (!locale || locale === 'en' || !packets.length) {
+      setTitleMap({})
+      return
+    }
+    let cancelled = false
+    const map = {}
+    Promise.all(
+      packets.map(async (p) => {
+        const cached = await getTranslation(locale, p.id)
+        if (cancelled) return
+        if (cached?.packet?.title) map[p.id] = cached.packet.title
+      })
+    ).then(() => {
+      if (!cancelled) setTitleMap(map)
+    })
+    return () => { cancelled = true }
+  }, [locale, packets])
 
   const assignmentByPacketId = assignments.reduce((acc, a) => ({ ...acc, [a.packetId]: a }), {})
   const displayPackets = mode === 'school'
@@ -172,7 +193,7 @@ export default function PacketList({ userId, mode, onOpenPacket, onChangeContent
                 {mode === 'school' && assignment?.courseName && (
                   <span className="course-name">{assignment.courseName}</span>
                 )}
-                <span className="title">{p.title}</span>
+                <span className="title">{titleMap[p.id] ?? p.title}</span>
                 <span className="meta">
                   {p.estimatedMinutes} min · {p.difficulty}
                   {mode === 'school' && assignment?.syncBy && (

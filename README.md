@@ -1,3 +1,13 @@
+# EduLite
+
+Offline-first learning PWA with Study and School flows.
+
+## Regional language (translation)
+
+Content is in English by default. If the device language is a supported regional language (e.g. Hindi, Marathi, Tamil), packet content is translated via RapidAPI Google Translate and cached in IndexedDB for offline use. Read-aloud (TTS) uses the same locale.
+
+**Setup:** Copy `.env.example` to `.env` and set your RapidAPI key and host (from your [RapidAPI](https://rapidapi.com) Google Translate subscription). Without these, the app runs in English only.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

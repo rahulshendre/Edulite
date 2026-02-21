@@ -1,5 +1,8 @@
 import { useState, useEffect, useCallback } from 'react'
-import { getPacket, getProgress, saveProgress } from '../db'
+import { getProgress, saveProgress } from '../db'
+import { getPacketInLocale } from '../utils/translate'
+import { getPreferredLocale, localeToTTSLang } from '../constants/locales'
+import { getReadAloudLabels } from '../constants/uiStrings'
 import { CONTENT_TIERS } from '../constants/tiers'
 import { getAllowedTierIds, getAllowedTierIdsWithMax, getEffectiveTier, capTierByMax, getStrictCapability } from '../utils/capability'
 import { log, logError } from '../utils/debug'
@@ -21,7 +24,8 @@ export default function PacketView({ userId, packetId, assignment, defaultTier, 
     }
     async function load() {
       try {
-        const p = await getPacket(packetId)
+        const locale = getPreferredLocale()
+        const p = await getPacketInLocale(packetId, locale)
         const prog = await getProgress(userId, packetId)
         setPacket(p)
         setProgress(prog || null)
@@ -129,23 +133,25 @@ export default function PacketView({ userId, packetId, assignment, defaultTier, 
 
   const getTextToSpeak = useCallback(() => {
     if (!packet) return ''
+    const locale = getPreferredLocale()
+    const labels = getReadAloudLabels(locale)
     if (step === 'content') {
       const raw = (packet.content?.text || '').replace(/# /g, '').replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\n/g, ' ').replace(/\s+/g, ' ').trim()
       return raw ? `${packet.title}. ${raw}` : packet.title
     }
     if (step === 'practice' && (packet.practice?.length ?? 0) > 0) {
-      const parts = ['Practice.']
+      const parts = [labels.practice]
       packet.practice.forEach((q, i) => {
-        parts.push(`Question ${i + 1}. ${q.question}`)
-        if (Array.isArray(q.options) && q.options.length) parts.push(`Options: ${q.options.join(', ')}`)
+        parts.push(`${labels.question} ${i + 1}. ${q.question}`)
+        if (Array.isArray(q.options) && q.options.length) parts.push(`${labels.options}: ${q.options.join(', ')}`)
       })
       return parts.join(' ')
     }
     if (step === 'assessment' && (packet.assessment?.length ?? 0) > 0) {
-      const parts = ['Assessment.']
+      const parts = [labels.assessment]
       packet.assessment.forEach((q, i) => {
-        parts.push(`Question ${i + 1}. ${q.question}`)
-        if (Array.isArray(q.options) && q.options.length) parts.push(`Options: ${q.options.join(', ')}`)
+        parts.push(`${labels.question} ${i + 1}. ${q.question}`)
+        if (Array.isArray(q.options) && q.options.length) parts.push(`${labels.options}: ${q.options.join(', ')}`)
       })
       return parts.join(' ')
     }
@@ -160,7 +166,8 @@ export default function PacketView({ userId, packetId, assignment, defaultTier, 
       setSpeechState('speaking')
       return
     }
-    speak(text, { onEnd: () => setSpeechState('idle') })
+    const locale = getPreferredLocale()
+    speak(text, { lang: localeToTTSLang(locale), onEnd: () => setSpeechState('idle') })
     setSpeechState('speaking')
   }
 
