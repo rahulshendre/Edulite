@@ -1,0 +1,212 @@
+[
+  {
+    "packetId": "packet-1",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Introduction to Fractions",
+    "subject": "Math",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "packet-2",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Comparing Fractions",
+    "subject": "Math",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "packet-3",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Proper and Improper Fractions",
+    "subject": "Math",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "packet-4",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Mixed Numbers",
+    "subject": "Math",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "packet-5",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Adding Like Fractions",
+    "subject": "Math",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "evs2-1",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Introduction to History",
+    "subject": "EVS",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "evs2-2",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Scientific Method of Studying History",
+    "subject": "EVS",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "evs2-3",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "History and Us",
+    "subject": "EVS",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "evs2-4",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Past and Future",
+    "subject": "EVS",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "evs2-5",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Archaeology",
+    "subject": "EVS",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "math-6",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Introduction to Decimals",
+    "subject": "Math",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "math-7",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Adding and Subtracting Decimals",
+    "subject": "Math",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "math-8",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Multiplying Decimals",
+    "subject": "Math",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "math-9",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Dividing Decimals",
+    "subject": "Math",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "math-10",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Converting Fractions to Decimals",
+    "subject": "Math",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "math-11",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Percentages Basics",
+    "subject": "Math",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "math-12",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Finding Percentages",
+    "subject": "Math",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "math-13",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Introduction to Algebra",
+    "subject": "Math",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "math-14",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Solving Simple Equations",
+    "subject": "Math",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "math-15",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Geometry Basics",
+    "subject": "Math",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "geo-1",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Maps and Directions",
+    "subject": "Geography",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "geo-2",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Types and Scales of Maps",
+    "subject": "Geography",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "geo-3",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "The Globe and Coordinates",
+    "subject": "Geography",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "geo-4",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Continents and Oceans",
+    "subject": "Geography",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "geo-5",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Earth's Rotation and Revolution",
+    "subject": "Geography",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "geo-6",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Seasons and Weather",
+    "subject": "Geography",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "geo-7",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Climate Zones",
+    "subject": "Geography",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "geo-8",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Natural Resources",
+    "subject": "Geography",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "geo-9",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Mountains, Plains, and Plateaus",
+    "subject": "Geography",
+    "maxTier": "full"
+  },
+  {
+    "packetId": "geo-10",
+    "syncBy": "2025-12-31T23:59:59Z",
+    "courseName": "Rivers and Water Bodies",
+    "subject": "Geography",
+    "maxTier": "full"
+  }
+]

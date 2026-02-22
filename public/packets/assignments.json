@@ -1,8 +1,7 @@
 [
-  {
-    "packetId": "packet-1",
-    "syncBy": "2025-12-31T23:59:59Z",
-    "courseName": "Math 101",
-    "maxTier": "textAndImages"
-  }
+  {"packetId":"packet-1","syncBy":"2025-12-31T23:59:59Z","courseName":"Fractions Basics","subject":"Math","maxTier":"textAndImages"},
+  {"packetId":"packet-2","syncBy":"2025-12-31T23:59:59Z","courseName":"Comparing Fractions","subject":"Math","maxTier":"full"},
+  {"packetId":"packet-3","syncBy":"2025-12-31T23:59:59Z","courseName":"Proper & Improper","subject":"Math","maxTier":"textAndImages"},
+  {"packetId":"packet-4","syncBy":"2025-12-31T23:59:59Z","courseName":"Mixed Numbers","subject":"Math","maxTier":"full"},
+  {"packetId":"packet-5","syncBy":"2025-12-31T23:59:59Z","courseName":"Adding Like Fractions","subject":"Math","maxTier":"textAndImages"}
 ]
