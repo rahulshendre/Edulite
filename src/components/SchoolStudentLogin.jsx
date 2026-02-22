@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { login } from '../utils/auth'
+import { signInStudent } from '../api/schoolAuth'
+import { isSupabaseConfigured } from '../lib/supabase'
 import { log } from '../utils/debug'
 
-// Mock: replace with real API later. GR no. + password.
 const MOCK_GR = 'student1'
 const MOCK_PASSWORD = 'pass'
 
@@ -10,8 +11,9 @@ export default function SchoolStudentLogin({ school, onLogin, onBack }) {
   const [grNo, setGrNo] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
     const trimmedGr = grNo.trim()
@@ -19,21 +21,38 @@ export default function SchoolStudentLogin({ school, onLogin, onBack }) {
       setError('Enter GR number and password.')
       return
     }
-    // Mock validation
-    if (trimmedGr !== MOCK_GR || password !== MOCK_PASSWORD) {
-      setError('Invalid GR number or password.')
-      return
+    setLoading(true)
+    try {
+      if (isSupabaseConfigured()) {
+        const result = await signInStudent({
+          grNo: trimmedGr,
+          password,
+          schoolId: school?.id ?? 'school-1',
+          schoolName: school?.name,
+        })
+        if (result.error) {
+          setError(result.error)
+          return
+        }
+        login(result.user)
+      } else {
+        if (trimmedGr !== MOCK_GR || password !== MOCK_PASSWORD) {
+          setError('Invalid GR number or password.')
+          return
+        }
+        login({
+          path: 'school',
+          role: 'student',
+          grNo: trimmedGr,
+          name: `Student ${trimmedGr}`,
+          ...(school && { schoolId: school.id, schoolName: school.name }),
+        })
+      }
+      log('SchoolStudentLogin: submitted', { grNo: trimmedGr })
+      onLogin()
+    } finally {
+      setLoading(false)
     }
-    const user = {
-      path: 'school',
-      role: 'student',
-      grNo: trimmedGr,
-      name: `Student ${trimmedGr}`,
-      ...(school && { schoolId: school.id, schoolName: school.name }),
-    }
-    login(user)
-    log('SchoolStudentLogin: submitted', { grNo: trimmedGr })
-    onLogin()
   }
 
   return (
@@ -67,8 +86,8 @@ export default function SchoolStudentLogin({ school, onLogin, onBack }) {
             className="login-input"
           />
           {error && <p className="login-error" role="alert">{error}</p>}
-          <button type="submit" className="login-btn">
-            Sign in
+          <button type="submit" className="login-btn" disabled={loading}>
+            {loading ? 'Signing in…' : 'Sign in'}
           </button>
         </form>
       </div>

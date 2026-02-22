@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
 import { registerSW } from 'virtual:pwa-register'
-import { getStoredUser, logout as doLogout } from './utils/auth'
+import { getStoredUser, login as doLogin, logout as doLogout } from './utils/auth'
 import { getDefaultTier, setDefaultTier as saveDefaultTier, clearDefaultTier } from './utils/prefs'
 import { log } from './utils/debug'
 import PathChoiceScreen from './components/PathChoiceScreen'
@@ -18,6 +18,8 @@ import TeacherDashboard from './components/TeacherDashboard'
 import HowItWorks from './components/HowItWorks'
 import AskAI from './components/AskAI'
 import { getPreferredLocale, setStoredLocale } from './constants/locales'
+import { supabase } from './lib/supabase'
+import { restoreSessionUser } from './api/schoolAuth'
 import './App.css'
 
 const SESSION_PATH_KEY = 'edulite_path'
@@ -88,6 +90,7 @@ export default function App() {
   }, [])
 
   const handleLogout = useCallback(() => {
+    supabase?.auth?.signOut?.().catch(() => {})
     doLogout()
     clearDefaultTier()
     setUser(null)
@@ -117,6 +120,24 @@ export default function App() {
     setSchoolRole('teacher')
     try { sessionStorage.setItem(SESSION_SCHOOL_ROLE_KEY, 'teacher') } catch {}
   }, [])
+  useEffect(() => {
+    if (getStoredUser() || !supabase) return
+    restoreSessionUser().then((res) => {
+      if (!res?.user) return
+      doLogin(res.user)
+      setUser(res.user)
+      setPathChoice('school')
+      setSchoolRole(res.user.role)
+      setSelectedSchool({ id: res.user.schoolId, name: res.user.schoolName ?? res.user.schoolId })
+      try {
+        sessionStorage.setItem(SESSION_PATH_KEY, 'school')
+        sessionStorage.setItem(SESSION_SCHOOL_ROLE_KEY, res.user.role)
+        sessionStorage.setItem(SESSION_SCHOOL_KEY, JSON.stringify({ id: res.user.schoolId, name: res.user.schoolName ?? res.user.schoolId }))
+      } catch {}
+      log('App: session restored', { userId: res.user.id, role: res.user.role })
+    })
+  }, [])
+
   const goBackToPathChoice = useCallback(() => {
     setPathChoice(null)
     setSchoolRole(null)
@@ -321,6 +342,7 @@ export default function App() {
               </div>
               <PacketList
                 userId={user?.id}
+                userPath={user?.path}
                 mode={mode}
                 onOpenPacket={handleOpenPacket}
                 onChangeContentMode={handleChangeContentMode}

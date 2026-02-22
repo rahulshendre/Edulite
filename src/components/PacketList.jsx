@@ -8,7 +8,7 @@ import { log, logError } from '../utils/debug'
 const PACKETS_JSON_URL = (typeof import.meta.env?.BASE_URL === 'string' ? import.meta.env.BASE_URL : '') + 'packets/packets.json'
 const ASSIGNMENTS_JSON_URL = (typeof import.meta.env?.BASE_URL === 'string' ? import.meta.env.BASE_URL : '') + 'packets/assignments.json'
 
-export default function PacketList({ userId, mode, onOpenPacket, onChangeContentMode, locale }) {
+export default function PacketList({ userId, userPath, mode, onOpenPacket, onChangeContentMode, locale }) {
   const [packets, setPackets] = useState([])
   const [assignments, setAssignments] = useState([]) // { packetId, syncBy, courseName, maxTier? }[]
   const [progressMap, setProgressMap] = useState({})
@@ -118,7 +118,7 @@ export default function PacketList({ userId, mode, onOpenPacket, onChangeContent
     setSyncMessage('')
     log('PacketList: sync started')
     try {
-      const result = await syncNow(userId)
+      const result = await syncNow(userId, { path: userPath })
       setSyncStatus('done')
       setSyncMessage(result.message || (result.success ? 'Synced.' : 'Sync failed.'))
       log('PacketList: sync done', { success: result.success, message: result.message, pushedCount: result.pushedCount, pulledCount: result.pulledPackets?.length ?? 0 })
