@@ -17,24 +17,14 @@
         "id": "p1",
         "type": "mcq",
         "question": "In the fraction 5/8, what is the denominator?",
-        "options": [
-          "5",
-          "8",
-          "13",
-          "40"
-        ],
+        "options": ["5", "8", "13", "40"],
         "correct": 1
       },
       {
         "id": "p2",
         "type": "mcq",
         "question": "How do you read 1/2?",
-        "options": [
-          "One two",
-          "One half",
-          "Two ones",
-          "Half one"
-        ],
+        "options": ["One two", "One half", "Two ones", "Half one"],
         "correct": 1
       }
     ],
@@ -43,16 +33,12 @@
         "id": "a1",
         "type": "mcq",
         "question": "Which fraction is greater: 2/3 or 1/3?",
-        "options": [
-          "2/3",
-          "1/3",
-          "They are equal",
-          "Cannot tell"
-        ],
+        "options": ["2/3", "1/3", "They are equal", "Cannot tell"],
         "correct": 0
       }
     ]
   },
+
   {
     "id": "packet-2",
     "version": 1,
@@ -71,24 +57,14 @@
         "id": "p1",
         "type": "mcq",
         "question": "Which is greater?",
-        "options": [
-          "3/5",
-          "4/5",
-          "Equal",
-          "None"
-        ],
+        "options": ["3/5", "4/5", "Equal", "None"],
         "correct": 1
       },
       {
         "id": "p2",
         "type": "mcq",
         "question": "Which is smaller?",
-        "options": [
-          "2/9",
-          "5/9",
-          "Equal",
-          "None"
-        ],
+        "options": ["2/9", "5/9", "Equal", "None"],
         "correct": 0
       }
     ],
@@ -97,16 +73,12 @@
         "id": "a1",
         "type": "mcq",
         "question": "Which fraction is largest?",
-        "options": [
-          "6/8",
-          "7/8",
-          "5/8",
-          "4/8"
-        ],
+        "options": ["6/8", "7/8", "5/8", "4/8"],
         "correct": 1
       }
     ]
   },
+
   {
     "id": "packet-3",
     "version": 1,
@@ -125,24 +97,14 @@
         "id": "p1",
         "type": "mcq",
         "question": "Which is a proper fraction?",
-        "options": [
-          "7/5",
-          "3/4",
-          "9/8",
-          "5/5"
-        ],
+        "options": ["7/5", "3/4", "9/8", "5/5"],
         "correct": 1
       },
       {
         "id": "p2",
         "type": "mcq",
         "question": "Which is an improper fraction?",
-        "options": [
-          "2/7",
-          "4/9",
-          "8/6",
-          "3/5"
-        ],
+        "options": ["2/7", "4/9", "8/6", "3/5"],
         "correct": 2
       }
     ],
@@ -151,16 +113,12 @@
         "id": "a1",
         "type": "mcq",
         "question": "5/5 is:",
-        "options": [
-          "Proper",
-          "Improper",
-          "Not a fraction",
-          "None"
-        ],
+        "options": ["Proper", "Improper", "Not a fraction", "None"],
         "correct": 1
       }
     ]
   },
+
   {
     "id": "packet-4",
     "version": 1,
@@ -179,24 +137,14 @@
         "id": "p1",
         "type": "mcq",
         "question": "1 3/4 means:",
-        "options": [
-          "One and three-fourths",
-          "Three and one-fourth",
-          "Four and one-third",
-          "None"
-        ],
+        "options": ["One and three-fourths", "Three and one-fourth", "Four and one-third", "None"],
         "correct": 0
       },
       {
         "id": "p2",
         "type": "mcq",
         "question": "2 1/2 equals how many halves?",
-        "options": [
-          "3",
-          "4",
-          "5",
-          "6"
-        ],
+        "options": ["3", "4", "5", "6"],
         "correct": 2
       }
     ],
@@ -205,16 +153,12 @@
         "id": "a1",
         "type": "mcq",
         "question": "Convert 3 1/2 to improper fraction:",
-        "options": [
-          "5/2",
-          "7/2",
-          "6/2",
-          "8/2"
-        ],
+        "options": ["5/2", "7/2", "6/2", "8/2"],
         "correct": 1
       }
     ]
   },
+
   {
     "id": "packet-5",
     "version": 1,
@@ -233,24 +177,14 @@
         "id": "p1",
         "type": "mcq",
         "question": "1/5 + 2/5 = ?",
-        "options": [
-          "3/5",
-          "3/10",
-          "2/5",
-          "1/10"
-        ],
+        "options": ["3/5", "3/10", "2/5", "1/10"],
         "correct": 0
       },
       {
         "id": "p2",
         "type": "mcq",
         "question": "3/8 + 4/8 = ?",
-        "options": [
-          "7/8",
-          "7/16",
-          "1/8",
-          "8/8"
-        ],
+        "options": ["7/8", "7/16", "1/8", "8/8"],
         "correct": 0
       }
     ],
@@ -259,2240 +193,1008 @@
         "id": "a1",
         "type": "mcq",
         "question": "5/9 + 1/9 = ?",
-        "options": [
-          "6/9",
-          "6/18",
-          "5/18",
-          "4/9"
-        ],
+        "options": ["6/9", "6/18", "5/18", "4/9"],
         "correct": 0
       }
     ]
   },
-  {
-    "id": "evs2-1",
-    "version": 2,
-    "title": "Introduction to History",
-    "difficulty": "easy",
-    "estimatedMinutes": 20,
-    "syncBy": null,
-    "content": {
-      "text": "# Introduction to History\n\nHistory is the study of past events. It tells us about how people lived, what they ate, how they dressed, what they believed in, and how societies changed over time.\n\nHistory is not just about kings and wars. It is also about farmers, traders, teachers, scientists, and ordinary people who shaped the world.\n\n## Why is History Important?\n\nHistory helps us:\n- Understand our culture and traditions\n- Learn from past mistakes\n- Appreciate freedom and democracy\n- Know how inventions and discoveries changed our lives\n\nBy learning history, we understand our present better and make informed decisions for the future.\n\n## Sources of History\n\nWe learn about the past through different sources:\n\n1. **Written Sources** – Books, letters, manuscripts, newspapers\n2. **Archaeological Sources** – Coins, tools, pottery, buildings\n3. **Oral Sources** – Stories passed down from grandparents\n\nHistorians carefully study these sources to understand what happened in the past.\n\n## Timeline and Chronology\n\nA timeline helps us arrange events in the correct order. This is called chronology. It helps us understand which event happened first and which happened later.\n\nHistory is usually divided into three periods:\n- Ancient Period\n- Medieval Period\n- Modern Period\n\nEach period has its own importance and unique developments.",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=iJz3GoomxvQ"
-    },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "What does history study?",
-        "options": [
-          "Future events",
-          "Past events",
-          "Games",
-          "Mathematics"
-        ],
-        "correct": 1
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "Why do we study history?",
-        "options": [
-          "To understand the past",
-          "To play",
-          "To sleep",
-          "To draw"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p3",
-        "type": "mcq",
-        "question": "Which of the following is a written source of history?",
-        "options": [
-          "Coins",
-          "Tools",
-          "Letters",
-          "Pottery"
-        ],
-        "correct": 2
-      },
-      {
-        "id": "p4",
-        "type": "mcq",
-        "question": "Stories told by grandparents are called:",
-        "options": [
-          "Written sources",
-          "Oral sources",
-          "Scientific sources",
-          "Modern sources"
-        ],
-        "correct": 1
-      },
-      {
-        "id": "p5",
-        "type": "mcq",
-        "question": "Arranging events in order of time is called:",
-        "options": [
-          "Drawing",
-          "Painting",
-          "Chronology",
-          "Mapping"
-        ],
-        "correct": 2
-      },
-      {
-        "id": "p6",
-        "type": "mcq",
-        "question": "Which is NOT a period of history?",
-        "options": [
-          "Ancient",
-          "Medieval",
-          "Modern",
-          "Digital"
-        ],
-        "correct": 3
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "History helps us understand:",
-        "options": [
-          "Past and present",
-          "Only future",
-          "Only games",
-          "None"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a2",
-        "type": "mcq",
-        "question": "Which of the following is an archaeological source?",
-        "options": [
-          "Newspaper",
-          "Coins",
-          "Email",
-          "Magazine"
-        ],
-        "correct": 1
-      },
-      {
-        "id": "a3",
-        "type": "mcq",
-        "question": "Who studies history?",
-        "options": [
-          "Engineer",
-          "Doctor",
-          "Historian",
-          "Pilot"
-        ],
-        "correct": 2
-      },
-      {
-        "id": "a4",
-        "type": "mcq",
-        "question": "Why are timelines important?",
-        "options": [
-          "To decorate notebooks",
-          "To confuse students",
-          "To show order of events",
-          "To draw pictures"
-        ],
-        "correct": 2
-      },
-      {
-        "id": "a5",
-        "type": "mcq",
-        "question": "Which period comes after the Medieval Period?",
-        "options": [
-          "Ancient",
-          "Stone Age",
-          "Modern",
-          "Prehistoric"
-        ],
-        "correct": 2
-      }
-    ]
+{
+  "id": "evs2-1",
+  "version": 1,
+  "title": "Introduction to History",
+  "difficulty": "easy",
+  "estimatedMinutes": 10,
+  "syncBy": null,
+  "content": {
+    "text": "# Introduction\n\nHistory is the study of past events. It helps us understand how people lived, what they believed, and how societies developed over time.\n\nBy learning history, we understand our present better and make informed decisions for the future.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=iJz3GoomxvQ"
   },
-  {
-    "id": "evs2-2",
-    "version": 2,
-    "title": "Scientific Method of Studying History",
-    "difficulty": "easy",
-    "estimatedMinutes": 22,
-    "syncBy": null,
-    "content": {
-      "text": "# Scientific Study of History\n\nHistory is not based on guesses or imagination. Historians study the past using a scientific method. This means they collect evidence, examine it carefully, and verify facts before reaching conclusions.\n\n## What is Evidence?\n\nEvidence is anything that helps us know about the past. It may include:\n\n- Written records (books, letters, inscriptions)\n- Monuments and buildings\n- Coins and tools\n- Paintings and artifacts\n- Oral traditions and folk stories\n\n## Steps in the Scientific Method of History\n\n1. **Collection of Evidence** – Historians gather information from various sources.\n2. **Observation** – They carefully examine the evidence.\n3. **Verification** – They check whether the information is correct and reliable.\n4. **Comparison** – They compare different sources to avoid mistakes.\n5. **Conclusion** – After proper study, they draw logical conclusions.\n\n## Importance of Scientific Study\n\nThe scientific method:\n- Prevents false information\n- Ensures accuracy\n- Makes history reliable\n- Helps us understand real facts instead of myths\n\nWithout evidence, history would become only stories. Scientific study makes history trustworthy and meaningful.",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=KIhOo8i8G3A"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "What does history study?",
+      "options": ["Future events", "Past events", "Games", "Mathematics"],
+      "correct": 1
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "History is studied using:",
-        "options": [
-          "Evidence",
-          "Stories only",
-          "Dreams",
-          "Games"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "Which is a source of history?",
-        "options": [
-          "Monuments",
-          "Toys",
-          "Sports",
-          "Music"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p3",
-        "type": "mcq",
-        "question": "Coins and tools are examples of:",
-        "options": [
-          "Modern objects",
-          "Archaeological sources",
-          "Games",
-          "Paintings only"
-        ],
-        "correct": 1
-      },
-      {
-        "id": "p4",
-        "type": "mcq",
-        "question": "Checking whether information is correct is called:",
-        "options": [
-          "Drawing",
-          "Verification",
-          "Painting",
-          "Imagination"
-        ],
-        "correct": 1
-      },
-      {
-        "id": "p5",
-        "type": "mcq",
-        "question": "Which step comes first in scientific study of history?",
-        "options": [
-          "Conclusion",
-          "Collection of Evidence",
-          "Comparison",
-          "Verification"
-        ],
-        "correct": 1
-      },
-      {
-        "id": "p6",
-        "type": "mcq",
-        "question": "Scientific study makes history:",
-        "options": [
-          "Confusing",
-          "Imaginary",
-          "Reliable",
-          "Boring"
-        ],
-        "correct": 2
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Written records are:",
-        "options": [
-          "Historical sources",
-          "Games",
-          "Stories only",
-          "None"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a2",
-        "type": "mcq",
-        "question": "Why do historians compare different sources?",
-        "options": [
-          "To waste time",
-          "To decorate books",
-          "To avoid mistakes",
-          "To play"
-        ],
-        "correct": 2
-      },
-      {
-        "id": "a3",
-        "type": "mcq",
-        "question": "Which of the following is NOT evidence?",
-        "options": [
-          "Inscriptions",
-          "Artifacts",
-          "Dreams",
-          "Monuments"
-        ],
-        "correct": 2
-      },
-      {
-        "id": "a4",
-        "type": "mcq",
-        "question": "Oral traditions include:",
-        "options": [
-          "Newspapers",
-          "Coins",
-          "Stories passed by elders",
-          "Modern apps"
-        ],
-        "correct": 2
-      },
-      {
-        "id": "a5",
-        "type": "mcq",
-        "question": "The final step of scientific study is:",
-        "options": [
-          "Observation",
-          "Collection",
-          "Conclusion",
-          "Guessing"
-        ],
-        "correct": 2
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "Why do we study history?",
+      "options": ["To understand the past", "To play", "To sleep", "To draw"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "History helps us understand:",
+      "options": ["Past and present", "Only future", "Only games", "None"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "evs2-2",
+  "version": 1,
+  "title": "Scientific Method of Studying History",
+  "difficulty": "easy",
+  "estimatedMinutes": 12,
+  "syncBy": null,
+  "content": {
+    "text": "# Scientific Study of History\n\nHistorians study history using evidence. Evidence includes written records, monuments, tools, and oral traditions.\n\nCareful observation and verification help historians reach accurate conclusions.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=KIhOo8i8G3A"
   },
-  {
-    "id": "evs2-3",
-    "version": 2,
-    "title": "History and Us",
-    "difficulty": "easy",
-    "estimatedMinutes": 22,
-    "syncBy": null,
-    "content": {
-      "text": "# History and Us\n\nHistory connects us with our ancestors. It helps us understand how people in the past lived, worked, celebrated festivals, and followed traditions.\n\nOur language, clothes, food habits, festivals, and customs are influenced by our history. By learning about the past, we understand who we are today.\n\n## Our Culture and Traditions\n\nCulture includes:\n- Festivals and celebrations\n- Traditional dress\n- Food habits\n- Art and music\n- Languages and scripts\n\nThese have developed over hundreds of years.\n\n## Heritage Around Us\n\nHeritage means the traditions, monuments, values, and achievements passed down from previous generations.\n\nExamples of heritage include:\n- Historical monuments\n- Ancient temples and forts\n- Traditional dances and music\n- Important historical events\n\n## Why History Matters in Our Daily Life\n\n- It teaches us respect for elders and traditions.\n- It helps us understand national unity.\n- It makes us proud of our country.\n- It teaches important lessons from past successes and mistakes.\n\nWhen we protect monuments and follow traditions respectfully, we preserve our heritage for future generations.",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=tRzCOQHkY7Y"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "History is studied using:",
+      "options": ["Evidence", "Stories only", "Dreams", "Games"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "History connects us with:",
-        "options": [
-          "Ancestors",
-          "Future robots",
-          "Games",
-          "Computers"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "History teaches us about:",
-        "options": [
-          "Culture",
-          "Sports",
-          "Weather",
-          "Cooking only"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p3",
-        "type": "mcq",
-        "question": "Culture includes:",
-        "options": [
-          "Festivals and traditions",
-          "Only games",
-          "Only science",
-          "Only shopping"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p4",
-        "type": "mcq",
-        "question": "Which of the following is part of heritage?",
-        "options": [
-          "Monuments",
-          "Video games",
-          "Modern cars",
-          "Mobile phones"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p5",
-        "type": "mcq",
-        "question": "History helps us feel:",
-        "options": [
-          "Proud of our country",
-          "Angry always",
-          "Bored always",
-          "Sleepy"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p6",
-        "type": "mcq",
-        "question": "Food habits are part of:",
-        "options": [
-          "Culture",
-          "Weather",
-          "Mathematics",
-          "Sports"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p7",
-        "type": "mcq",
-        "question": "Protecting monuments helps to:",
-        "options": [
-          "Preserve heritage",
-          "Destroy history",
-          "Waste time",
-          "Play games"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Heritage means:",
-        "options": [
-          "Traditions and culture",
-          "Food",
-          "Games",
-          "Cars"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a2",
-        "type": "mcq",
-        "question": "Which is NOT part of culture?",
-        "options": [
-          "Language",
-          "Festivals",
-          "Traditional dress",
-          "Mobile apps"
-        ],
-        "correct": 3
-      },
-      {
-        "id": "a3",
-        "type": "mcq",
-        "question": "History teaches us to:",
-        "options": [
-          "Respect our traditions",
-          "Forget the past",
-          "Ignore elders",
-          "Break monuments"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a4",
-        "type": "mcq",
-        "question": "Historical monuments are:",
-        "options": [
-          "Part of our heritage",
-          "Only decorations",
-          "Modern toys",
-          "Sports items"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a5",
-        "type": "mcq",
-        "question": "Why should we preserve heritage?",
-        "options": [
-          "For future generations",
-          "To destroy it later",
-          "For games only",
-          "For decoration only"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "Which is a source of history?",
+      "options": ["Monuments", "Toys", "Sports", "Music"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Written records are:",
+      "options": ["Historical sources", "Games", "Stories only", "None"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "evs2-3",
+  "version": 1,
+  "title": "History and Us",
+  "difficulty": "easy",
+  "estimatedMinutes": 10,
+  "syncBy": null,
+  "content": {
+    "text": "# History and Us\n\nHistory connects us with our ancestors. It teaches us about traditions, culture, and values.\n\nUnderstanding history helps us respect our heritage.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=tRzCOQHkY7Y"
   },
-  {
-    "id": "evs2-4",
-    "version": 2,
-    "title": "Past and Future",
-    "difficulty": "easy",
-    "estimatedMinutes": 22,
-    "syncBy": null,
-    "content": {
-      "text": "# Past and Future\n\nThe **past** refers to events that have already happened. These events cannot be changed, but we can learn from them.\n\nThe **present** is what is happening right now.\n\nThe **future** refers to events that are yet to happen. We can prepare and plan for the future.\n\n## Importance of the Past\n\nThe past teaches us:\n- Important lessons\n- Successes and mistakes\n- Cultural values\n- Scientific discoveries\n\n## Planning for the Future\n\nBy studying the past, we can:\n- Avoid repeating mistakes\n- Make better decisions\n- Improve our lives\n- Build a better society\n\nHistory helps connect the past, present, and future together.",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=b12lj0m2u6Y"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "History connects us with:",
+      "options": ["Ancestors", "Future robots", "Games", "Computers"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "The past includes:",
-        "options": [
-          "Events already happened",
-          "Future plans",
-          "Dreams",
-          "Games"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "Future refers to:",
-        "options": [
-          "Upcoming events",
-          "Past events",
-          "History books",
-          "None"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p3",
-        "type": "mcq",
-        "question": "The present means:",
-        "options": [
-          "What is happening now",
-          "Yesterday",
-          "Next year",
-          "Ancient time"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p4",
-        "type": "mcq",
-        "question": "We study the past to:",
-        "options": [
-          "Learn lessons",
-          "Forget everything",
-          "Waste time",
-          "Play games"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p5",
-        "type": "mcq",
-        "question": "Which cannot be changed?",
-        "options": [
-          "Past events",
-          "Future plans",
-          "Present actions",
-          "Dreams"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p6",
-        "type": "mcq",
-        "question": "Planning helps us prepare for:",
-        "options": [
-          "Future",
-          "Past",
-          "Yesterday",
-          "Ancient times"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Why study the past?",
-        "options": [
-          "To learn and improve",
-          "To forget",
-          "To sleep",
-          "None"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a2",
-        "type": "mcq",
-        "question": "Which comes after present?",
-        "options": [
-          "Future",
-          "Past",
-          "Ancient",
-          "Stone Age"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a3",
-        "type": "mcq",
-        "question": "History connects:",
-        "options": [
-          "Past, present and future",
-          "Only future",
-          "Only past",
-          "None"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a4",
-        "type": "mcq",
-        "question": "We should avoid repeating:",
-        "options": [
-          "Past mistakes",
-          "Success",
-          "Learning",
-          "Planning"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "History teaches us about:",
+      "options": ["Culture", "Sports", "Weather", "Cooking only"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Heritage means:",
+      "options": ["Traditions and culture", "Food", "Games", "Cars"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "evs2-4",
+  "version": 1,
+  "title": "Past and Future",
+  "difficulty": "easy",
+  "estimatedMinutes": 10,
+  "syncBy": null,
+  "content": {
+    "text": "# Past and Future\n\nThe past refers to events that already happened. The future refers to events yet to happen.\n\nStudying the past helps us plan better for the future.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=b12lj0m2u6Y"
   },
-  {
-    "id": "evs2-5",
-    "version": 2,
-    "title": "Archaeology",
-    "difficulty": "easy",
-    "estimatedMinutes": 25,
-    "syncBy": null,
-    "content": {
-      "text": "# Archaeology\n\nArchaeology is the study of ancient objects and remains. It helps us understand how early humans lived.\n\nPeople who study archaeology are called **archaeologists**.\n\n## What Do Archaeologists Do?\n\nArchaeologists:\n- Dig carefully at historical sites (excavation)\n- Study tools, bones, coins, and pottery\n- Examine ancient buildings and ruins\n- Record and preserve findings\n\n## Excavation\n\nExcavation means digging carefully to uncover objects buried under the ground. It must be done slowly to avoid damaging important items.\n\n## Importance of Archaeology\n\nArchaeology helps us:\n- Learn about ancient civilizations\n- Understand early human life\n- Discover lost cities\n- Protect historical monuments\n\nWithout archaeology, many ancient facts would remain unknown.",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=02XIr9KEvWU"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "The past includes:",
+      "options": ["Events already happened", "Future plans", "Dreams", "Games"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "Archaeologists study:",
-        "options": [
-          "Ancient objects",
-          "Future technology",
-          "Games",
-          "Sports"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "Excavation means:",
-        "options": [
-          "Digging carefully",
-          "Sleeping",
-          "Running",
-          "Drawing"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p3",
-        "type": "mcq",
-        "question": "Archaeologists discover:",
-        "options": [
-          "Coins and tools",
-          "Mobile phones",
-          "Cars",
-          "Computers"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p4",
-        "type": "mcq",
-        "question": "Archaeology helps us understand:",
-        "options": [
-          "Ancient civilizations",
-          "Future robots",
-          "Video games",
-          "Modern movies"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p5",
-        "type": "mcq",
-        "question": "Archaeologists must dig:",
-        "options": [
-          "Carefully",
-          "Quickly",
-          "Carelessly",
-          "Loudly"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p6",
-        "type": "mcq",
-        "question": "Ruins are:",
-        "options": [
-          "Remains of old buildings",
-          "New houses",
-          "Shops",
-          "Cars"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Archaeology helps us learn about:",
-        "options": [
-          "Past civilizations",
-          "Future cars",
-          "Games",
-          "Music"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a2",
-        "type": "mcq",
-        "question": "A person who studies ancient objects is called:",
-        "options": [
-          "Historian",
-          "Archaeologist",
-          "Doctor",
-          "Engineer"
-        ],
-        "correct": 1
-      },
-      {
-        "id": "a3",
-        "type": "mcq",
-        "question": "Why is excavation done carefully?",
-        "options": [
-          "To protect findings",
-          "To finish fast",
-          "To make noise",
-          "For fun"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a4",
-        "type": "mcq",
-        "question": "Which of the following is NOT studied in archaeology?",
-        "options": [
-          "Ancient pottery",
-          "Bones",
-          "Modern smartphones",
-          "Old coins"
-        ],
-        "correct": 2
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "Future refers to:",
+      "options": ["Upcoming events", "Past events", "History books", "None"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Why study the past?",
+      "options": ["To learn and improve", "To forget", "To sleep", "None"],
+      "correct": 0
+    }
+  ]
+},
+{
+  "id": "evs2-5",
+  "version": 1,
+  "title": "Archaeology",
+  "difficulty": "easy",
+  "estimatedMinutes": 12,
+  "syncBy": null,
+  "content": {
+    "text": "# Archaeology\n\nArchaeology is the study of ancient objects and remains.\n\nArchaeologists dig sites to discover tools, bones, and buildings from the past.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=02XIr9KEvWU"
   },
-  {
-    "id": "math-6",
-    "version": 1,
-    "title": "Introduction to Decimals",
-    "difficulty": "easy",
-    "estimatedMinutes": 15,
-    "syncBy": null,
-    "content": {
-      "text": "# Decimals Basics\n\nA decimal is another way to write a fraction. The decimal point separates the whole number from the fractional part.\n\nExample: 0.5 means 5/10, and 0.25 means 25/100.",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "Archaeologists study:",
+      "options": ["Ancient objects", "Future technology", "Games", "Sports"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "What does 0.7 represent?",
-        "options": [
-          "7/10",
-          "7/100",
-          "7/1000",
-          "70/100"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "How do you read 3.14?",
-        "options": [
-          "Three point one four",
-          "Three one four",
-          "Three and three",
-          "None"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Which decimal equals 1/2?",
-        "options": [
-          "0.5",
-          "0.25",
-          "0.75",
-          "1.2"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "Excavation means:",
+      "options": ["Digging carefully", "Sleeping", "Running", "Drawing"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Archaeology helps us learn about:",
+      "options": ["Past civilizations", "Future cars", "Games", "Music"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "math-6",
+  "version": 1,
+  "title": "Introduction to Decimals",
+  "difficulty": "easy",
+  "estimatedMinutes": 15,
+  "syncBy": null,
+  "content": {
+    "text": "# Decimals Basics\n\nA decimal is another way to write a fraction. The decimal point separates the whole number from the fractional part.\n\nExample: 0.5 means 5/10, and 0.25 means 25/100.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   },
-  {
-    "id": "math-7",
-    "version": 1,
-    "title": "Adding and Subtracting Decimals",
-    "difficulty": "easy",
-    "estimatedMinutes": 18,
-    "syncBy": null,
-    "content": {
-      "text": "# Adding and Subtracting Decimals\n\nWhen adding or subtracting decimals, align the decimal points and add or subtract as with whole numbers.\n\nExample: 2.5 + 1.3 = 3.8",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=2tRPZsEeV5g"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "What does 0.7 represent?",
+      "options": ["7/10", "7/100", "7/1000", "70/100"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "What is 3.2 + 1.5?",
-        "options": [
-          "4.7",
-          "4.8",
-          "3.7",
-          "5.2"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "What is 5.6 - 2.3?",
-        "options": [
-          "3.3",
-          "3.4",
-          "2.3",
-          "7.9"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Calculate: 4.5 + 2.7 - 1.2",
-        "options": [
-          "6.0",
-          "6.1",
-          "5.9",
-          "6.2"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "How do you read 3.14?",
+      "options": ["Three point one four", "Three one four", "Three and three", "None"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Which decimal equals 1/2?",
+      "options": ["0.5", "0.25", "0.75", "1.2"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "math-7",
+  "version": 1,
+  "title": "Adding and Subtracting Decimals",
+  "difficulty": "easy",
+  "estimatedMinutes": 18,
+  "syncBy": null,
+  "content": {
+    "text": "# Adding and Subtracting Decimals\n\nWhen adding or subtracting decimals, align the decimal points and add or subtract as with whole numbers.\n\nExample: 2.5 + 1.3 = 3.8",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=2tRPZsEeV5g"
   },
-  {
-    "id": "math-8",
-    "version": 1,
-    "title": "Multiplying Decimals",
-    "difficulty": "medium",
-    "estimatedMinutes": 20,
-    "syncBy": null,
-    "content": {
-      "text": "# Multiplying Decimals\n\nTo multiply decimals, multiply as whole numbers and then place the decimal point based on the total number of decimal places.\n\nExample: 2.5 × 0.4 = 1.0",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=KYnlZc0X43s"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "What is 3.2 + 1.5?",
+      "options": ["4.7", "4.8", "3.7", "5.2"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "What is 0.5 × 0.4?",
-        "options": [
-          "0.2",
-          "0.20",
-          "0.02",
-          "2.0"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "What is 1.5 × 2?",
-        "options": [
-          "3.0",
-          "2.5",
-          "3.5",
-          "2.0"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Calculate: 2.3 × 1.2",
-        "options": [
-          "2.76",
-          "2.76",
-          "3.5",
-          "2.3"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "What is 5.6 - 2.3?",
+      "options": ["3.3", "3.4", "2.3", "7.9"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Calculate: 4.5 + 2.7 - 1.2",
+      "options": ["6.0", "6.1", "5.9", "6.2"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "math-8",
+  "version": 1,
+  "title": "Multiplying Decimals",
+  "difficulty": "medium",
+  "estimatedMinutes": 20,
+  "syncBy": null,
+  "content": {
+    "text": "# Multiplying Decimals\n\nTo multiply decimals, multiply as whole numbers and then place the decimal point based on the total number of decimal places.\n\nExample: 2.5 × 0.4 = 1.0",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=KYnlZc0X43s"
   },
-  {
-    "id": "math-9",
-    "version": 1,
-    "title": "Dividing Decimals",
-    "difficulty": "medium",
-    "estimatedMinutes": 20,
-    "syncBy": null,
-    "content": {
-      "text": "# Dividing Decimals\n\nTo divide decimals, move the decimal point in both the dividend and divisor to make the divisor a whole number.\n\nExample: 4.5 ÷ 0.5 = 9",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=2tRPZsEeV5g"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "What is 0.5 × 0.4?",
+      "options": ["0.2", "0.20", "0.02", "2.0"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "What is 3.6 ÷ 0.6?",
-        "options": [
-          "6",
-          "5",
-          "4",
-          "7"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "What is 2.4 ÷ 2?",
-        "options": [
-          "1.2",
-          "1.4",
-          "0.8",
-          "2.0"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Calculate: 5.5 ÷ 1.1",
-        "options": [
-          "5",
-          "4.5",
-          "6",
-          "4"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "What is 1.5 × 2?",
+      "options": ["3.0", "2.5", "3.5", "2.0"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Calculate: 2.3 × 1.2",
+      "options": ["2.76", "2.76", "3.5", "2.3"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "math-9",
+  "version": 1,
+  "title": "Dividing Decimals",
+  "difficulty": "medium",
+  "estimatedMinutes": 20,
+  "syncBy": null,
+  "content": {
+    "text": "# Dividing Decimals\n\nTo divide decimals, move the decimal point in both the dividend and divisor to make the divisor a whole number.\n\nExample: 4.5 ÷ 0.5 = 9",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=2tRPZsEeV5g"
   },
-  {
-    "id": "math-10",
-    "version": 1,
-    "title": "Converting Fractions to Decimals",
-    "difficulty": "medium",
-    "estimatedMinutes": 16,
-    "syncBy": null,
-    "content": {
-      "text": "# Converting Fractions to Decimals\n\nTo convert a fraction to a decimal, divide the numerator by the denominator.\n\nExample: 3/4 = 0.75 (3 ÷ 4 = 0.75)",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=b12lj0m2u6Y"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "What is 3.6 ÷ 0.6?",
+      "options": ["6", "5", "4", "7"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "What is 1/2 as a decimal?",
-        "options": [
-          "0.5",
-          "0.2",
-          "0.25",
-          "0.75"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "What is 1/4 as a decimal?",
-        "options": [
-          "0.25",
-          "0.5",
-          "0.75",
-          "0.14"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "What is 3/5 as a decimal?",
-        "options": [
-          "0.6",
-          "0.5",
-          "0.75",
-          "0.35"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "What is 2.4 ÷ 2?",
+      "options": ["1.2", "1.4", "0.8", "2.0"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Calculate: 5.5 ÷ 1.1",
+      "options": ["5", "4.5", "6", "4"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "math-10",
+  "version": 1,
+  "title": "Converting Fractions to Decimals",
+  "difficulty": "medium",
+  "estimatedMinutes": 16,
+  "syncBy": null,
+  "content": {
+    "text": "# Converting Fractions to Decimals\n\nTo convert a fraction to a decimal, divide the numerator by the denominator.\n\nExample: 3/4 = 0.75 (3 ÷ 4 = 0.75)",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=b12lj0m2u6Y"
   },
-  {
-    "id": "math-11",
-    "version": 1,
-    "title": "Percentages Basics",
-    "difficulty": "medium",
-    "estimatedMinutes": 15,
-    "syncBy": null,
-    "content": {
-      "text": "# Percentages Basics\n\nA percentage represents a portion out of 100. The symbol % means \"per hundred\".\n\nExample: 50% means 50 out of 100, or 50/100 = 0.5",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=02XIr9KEvWU"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "What is 1/2 as a decimal?",
+      "options": ["0.5", "0.2", "0.25", "0.75"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "What does 25% represent?",
-        "options": [
-          "25/100",
-          "25/10",
-          "2.5/100",
-          "25"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "What is 75% as a decimal?",
-        "options": [
-          "0.75",
-          "0.25",
-          "7.5",
-          "75"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "What is 50% of 200?",
-        "options": [
-          "100",
-          "50",
-          "150",
-          "200"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "What is 1/4 as a decimal?",
+      "options": ["0.25", "0.5", "0.75", "0.14"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "What is 3/5 as a decimal?",
+      "options": ["0.6", "0.5", "0.75", "0.35"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "math-11",
+  "version": 1,
+  "title": "Percentages Basics",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "syncBy": null,
+  "content": {
+    "text": "# Percentages Basics\n\nA percentage represents a portion out of 100. The symbol % means \"per hundred\".\n\nExample: 50% means 50 out of 100, or 50/100 = 0.5",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=02XIr9KEvWU"
   },
-  {
-    "id": "math-12",
-    "version": 1,
-    "title": "Finding Percentages",
-    "difficulty": "medium",
-    "estimatedMinutes": 18,
-    "syncBy": null,
-    "content": {
-      "text": "# Finding Percentages\n\nTo find a percentage of a number, multiply the number by the percentage (as a decimal).\n\nExample: 20% of 50 = 0.20 × 50 = 10",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "What does 25% represent?",
+      "options": ["25/100", "25/10", "2.5/100", "25"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "What is 10% of 100?",
-        "options": [
-          "10",
-          "20",
-          "50",
-          "100"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "What is 30% of 200?",
-        "options": [
-          "60",
-          "30",
-          "70",
-          "90"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Calculate: 15% of 80",
-        "options": [
-          "12",
-          "15",
-          "20",
-          "8"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "What is 75% as a decimal?",
+      "options": ["0.75", "0.25", "7.5", "75"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "What is 50% of 200?",
+      "options": ["100", "50", "150", "200"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "math-12",
+  "version": 1,
+  "title": "Finding Percentages",
+  "difficulty": "medium",
+  "estimatedMinutes": 18,
+  "syncBy": null,
+  "content": {
+    "text": "# Finding Percentages\n\nTo find a percentage of a number, multiply the number by the percentage (as a decimal).\n\nExample: 20% of 50 = 0.20 × 50 = 10",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   },
-  {
-    "id": "math-13",
-    "version": 1,
-    "title": "Introduction to Algebra",
-    "difficulty": "medium",
-    "estimatedMinutes": 20,
-    "syncBy": null,
-    "content": {
-      "text": "# Introduction to Algebra\n\nAlgebra uses letters (variables) to represent unknown numbers. Variables like x, y, or z help us solve problems.\n\nExample: x + 3 = 7, so x = 4",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=2tRPZsEeV5g"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "What is 10% of 100?",
+      "options": ["10", "20", "50", "100"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "What does x represent?",
-        "options": [
-          "An unknown number",
-          "A known number",
-          "10",
-          "A letter"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "In x + 2, what is x if the result is 8?",
-        "options": [
-          "6",
-          "8",
-          "2",
-          "10"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Solve: x - 3 = 5",
-        "options": [
-          "8",
-          "2",
-          "5",
-          "3"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "What is 30% of 200?",
+      "options": ["60", "30", "70", "90"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Calculate: 15% of 80",
+      "options": ["12", "15", "20", "8"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "math-13",
+  "version": 1,
+  "title": "Introduction to Algebra",
+  "difficulty": "medium",
+  "estimatedMinutes": 20,
+  "syncBy": null,
+  "content": {
+    "text": "# Introduction to Algebra\n\nAlgebra uses letters (variables) to represent unknown numbers. Variables like x, y, or z help us solve problems.\n\nExample: x + 3 = 7, so x = 4",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=2tRPZsEeV5g"
   },
-  {
-    "id": "math-14",
-    "version": 1,
-    "title": "Solving Simple Equations",
-    "difficulty": "medium",
-    "estimatedMinutes": 22,
-    "syncBy": null,
-    "content": {
-      "text": "# Solving Simple Equations\n\nTo solve an equation, perform the same operation on both sides to isolate the variable.\n\nExample: x + 5 = 12, subtract 5 from both sides: x = 7",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=KYnlZc0X43s"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "What does x represent?",
+      "options": ["An unknown number", "A known number", "10", "A letter"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "Solve: x + 4 = 9",
-        "options": [
-          "5",
-          "4",
-          "9",
-          "13"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "Solve: 2x = 10",
-        "options": [
-          "5",
-          "2",
-          "10",
-          "20"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Solve: x/2 = 6",
-        "options": [
-          "12",
-          "3",
-          "8",
-          "4"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "In x + 2, what is x if the result is 8?",
+      "options": ["6", "8", "2", "10"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Solve: x - 3 = 5",
+      "options": ["8", "2", "5", "3"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "math-14",
+  "version": 1,
+  "title": "Solving Simple Equations",
+  "difficulty": "medium",
+  "estimatedMinutes": 22,
+  "syncBy": null,
+  "content": {
+    "text": "# Solving Simple Equations\n\nTo solve an equation, perform the same operation on both sides to isolate the variable.\n\nExample: x + 5 = 12, subtract 5 from both sides: x = 7",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=KYnlZc0X43s"
   },
-  {
-    "id": "math-15",
-    "version": 1,
-    "title": "Geometry Basics",
-    "difficulty": "medium",
-    "estimatedMinutes": 18,
-    "syncBy": null,
-    "content": {
-      "text": "# Geometry Basics\n\nGeometry is the study of shapes and their properties. Basic shapes include squares, rectangles, triangles, and circles.\n\nExample: A square has 4 equal sides and 4 right angles.",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=b12lj0m2u6Y"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "Solve: x + 4 = 9",
+      "options": ["5", "4", "9", "13"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "How many sides does a triangle have?",
-        "options": [
-          "3",
-          "4",
-          "5",
-          "6"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "What shape has all equal sides and right angles?",
-        "options": [
-          "Square",
-          "Triangle",
-          "Circle",
-          "Rectangle"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "How many angles does a rectangle have?",
-        "options": [
-          "4",
-          "3",
-          "5",
-          "6"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "Solve: 2x = 10",
+      "options": ["5", "2", "10", "20"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Solve: x/2 = 6",
+      "options": ["12", "3", "8", "4"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "math-15",
+  "version": 1,
+  "title": "Geometry Basics",
+  "difficulty": "medium",
+  "estimatedMinutes": 18,
+  "syncBy": null,
+  "content": {
+    "text": "# Geometry Basics\n\nGeometry is the study of shapes and their properties. Basic shapes include squares, rectangles, triangles, and circles.\n\nExample: A square has 4 equal sides and 4 right angles.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=b12lj0m2u6Y"
   },
-  {
-    "id": "geo-1",
-    "version": 2,
-    "title": "Maps and Directions",
-    "difficulty": "easy",
-    "estimatedMinutes": 30,
-    "syncBy": null,
-    "content": {
-      "text": "# Maps and Directions\n\nA map is a drawing that shows places on flat paper. It helps us understand the layout of an area such as a city, village, country, or even the whole world.\n\nMaps are smaller representations of large areas. They help us find locations, plan journeys, and understand distances.\n\n## Cardinal Directions\n\nThe four main directions are called cardinal directions:\n- North (N)\n- South (S)\n- East (E)\n- West (W)\n\nNorth is usually shown at the top of a map.\n\n## Intermediate Directions\n\nBetween the main directions, we also have:\n- North-East (NE)\n- North-West (NW)\n- South-East (SE)\n- South-West (SW)\n\nThese help us describe locations more accurately.\n\n## Compass\n\nA compass is an instrument used to find directions. The needle of a compass always points towards North.\n\n## Map Symbols and Scale\n\nMaps use symbols to represent real objects like schools, hospitals, roads, rivers, and parks.\n\nA scale shows the distance on a map compared to real distance. For example, 1 cm on a map may represent 1 km in real life.\n\n## Why Maps Are Important\n\nMaps help us:\n- Travel safely\n- Locate places\n- Understand geography\n- Plan routes\n\nExample: If the library is north of the school, it means the library is located above the school when looking at a map.",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=CFByl9q71k4"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "How many sides does a triangle have?",
+      "options": ["3", "4", "5", "6"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "What is typically shown at the top of a map?",
-        "options": [
-          "North",
-          "South",
-          "East",
-          "West"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "Maps are used to:",
-        "options": [
-          "Understand the layout of places",
-          "Play games",
-          "Read stories",
-          "Eat food"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p3",
-        "type": "mcq",
-        "question": "How many main directions are there?",
-        "options": [
-          "Four",
-          "Two",
-          "Five",
-          "Six"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p4",
-        "type": "mcq",
-        "question": "Which direction lies between North and East?",
-        "options": [
-          "North-East",
-          "South-East",
-          "North-West",
-          "West"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p5",
-        "type": "mcq",
-        "question": "A compass needle always points to:",
-        "options": [
-          "North",
-          "South",
-          "East",
-          "West"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p6",
-        "type": "mcq",
-        "question": "Symbols on a map represent:",
-        "options": [
-          "Real objects",
-          "Dreams",
-          "Stories",
-          "Games"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p7",
-        "type": "mcq",
-        "question": "Scale on a map shows:",
-        "options": [
-          "Distance comparison",
-          "Weather",
-          "Temperature",
-          "Colors"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "If you face North, which direction is on your left?",
-        "options": [
-          "West",
-          "East",
-          "South",
-          "North"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a2",
-        "type": "mcq",
-        "question": "If you face East, which direction is behind you?",
-        "options": [
-          "West",
-          "North",
-          "South",
-          "East"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a3",
-        "type": "mcq",
-        "question": "Which of the following is NOT a cardinal direction?",
-        "options": [
-          "North",
-          "South",
-          "Up",
-          "West"
-        ],
-        "correct": 2
-      },
-      {
-        "id": "a4",
-        "type": "mcq",
-        "question": "North-West lies between:",
-        "options": [
-          "North and West",
-          "South and East",
-          "East and West",
-          "North and South"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a5",
-        "type": "mcq",
-        "question": "Maps help us in:",
-        "options": [
-          "Planning journeys",
-          "Sleeping",
-          "Cooking",
-          "Drawing only"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "What shape has all equal sides and right angles?",
+      "options": ["Square", "Triangle", "Circle", "Rectangle"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "How many angles does a rectangle have?",
+      "options": ["4", "3", "5", "6"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "geo-1",
+  "version": 1,
+  "title": "Maps and Directions",
+  "difficulty": "easy",
+  "estimatedMinutes": 18,
+  "syncBy": null,
+  "content": {
+    "text": "# Maps and Directions\n\nA map is a representation of an area on flat paper. Maps help us understand the layout of places and find our way around.\n\nDirections include North, South, East, and West. North is typically shown at the top of a map.\n\nExample: The library is north of the school.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=CFByl9q71k4"
   },
-  {
-    "id": "geo-2",
-    "version": 2,
-    "title": "Types and Scales of Maps",
-    "difficulty": "easy",
-    "estimatedMinutes": 32,
-    "syncBy": null,
-    "content": {
-      "text": "# Types and Scales of Maps\n\nMaps are useful tools that help us understand different features of the Earth. There are different types of maps, and each type shows specific information.\n\n## Types of Maps\n\n### 1. Political Maps\nPolitical maps show countries, states, cities, and their boundaries. They focus on borders and major human settlements.\n\n### 2. Physical Maps\nPhysical maps show natural features such as mountains, rivers, deserts, plateaus, and plains. They help us understand landforms.\n\n### 3. Thematic Maps\nThematic maps show specific information related to a particular topic. Examples include maps showing population, rainfall, climate, crops, or industries.\n\n### 4. Road Maps\nRoad maps show highways, streets, and transportation routes. They help travelers find directions.\n\n## Map Scale\n\nA map is smaller than the real world. Therefore, we use a scale to show the relationship between map distance and real distance.\n\nScale indicates the ratio between distances on the map and actual ground distances.\n\n### Types of Scale\n\n1. **Statement Scale** – Example: 1 cm = 1 km\n2. **Ratio Scale** – Example: 1 : 100000\n3. **Graphical (Bar) Scale** – A line drawn on the map showing distance\n\n## Importance of Scale\n\n- Helps measure real distances\n- Helps compare sizes of places\n- Makes maps accurate and useful\n\nWithout scale, we would not know the real size or distance between places.",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=wWbOy4c0Sps"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "What is typically shown at the top of a map?",
+      "options": ["North", "South", "East", "West"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "Which map type shows mountains and rivers?",
-        "options": [
-          "Physical map",
-          "Political map",
-          "Thematic map",
-          "Road map"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "What does map scale show?",
-        "options": [
-          "Ratio of map distances to real distances",
-          "The title of the map",
-          "The colors used",
-          "The size of the map"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p3",
-        "type": "mcq",
-        "question": "Which map shows countries and state boundaries?",
-        "options": [
-          "Political map",
-          "Physical map",
-          "Thematic map",
-          "Weather map"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p4",
-        "type": "mcq",
-        "question": "A map showing population density is a:",
-        "options": [
-          "Thematic map",
-          "Political map",
-          "Physical map",
-          "Road map"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p5",
-        "type": "mcq",
-        "question": "1 cm = 1 km is an example of:",
-        "options": [
-          "Statement scale",
-          "Ratio scale",
-          "Graphical scale",
-          "Color scale"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p6",
-        "type": "mcq",
-        "question": "Which map helps drivers find highways?",
-        "options": [
-          "Road map",
-          "Physical map",
-          "Political map",
-          "Thematic map"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p7",
-        "type": "mcq",
-        "question": "Which of the following is a ratio scale?",
-        "options": [
-          "1 : 50000",
-          "1 cm = 1 km",
-          "5 km bar",
-          "North arrow"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Political maps show:",
-        "options": [
-          "Countries and borders",
-          "Mountain heights",
-          "Population density",
-          "Climate zones"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a2",
-        "type": "mcq",
-        "question": "Physical maps mainly show:",
-        "options": [
-          "Natural features",
-          "City borders",
-          "Road names",
-          "Industries only"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a3",
-        "type": "mcq",
-        "question": "Why is scale important?",
-        "options": [
-          "To measure real distances",
-          "To color the map",
-          "To decorate",
-          "To make maps larger"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a4",
-        "type": "mcq",
-        "question": "Which type of scale uses a drawn line?",
-        "options": [
-          "Graphical scale",
-          "Ratio scale",
-          "Statement scale",
-          "Political scale"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a5",
-        "type": "mcq",
-        "question": "Thematic maps focus on:",
-        "options": [
-          "Specific topics",
-          "Only borders",
-          "Only rivers",
-          "Only cities"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "Maps are used to:",
+      "options": ["Understand the layout of places", "Play games", "Read stories", "Eat food"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "If you face North, which direction is on your left?",
+      "options": ["West", "East", "South", "North"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "geo-2",
+  "version": 1,
+  "title": "Types and Scales of Maps",
+  "difficulty": "easy",
+  "estimatedMinutes": 20,
+  "syncBy": null,
+  "content": {
+    "text": "# Types and Scales of Maps\n\nThere are different types of maps:\n- Political maps show countries and borders\n- Physical maps show mountains, rivers, and terrain\n- Thematic maps show specific information like climate or population\n\nMap scale indicates the ratio between distances on the map and actual ground distances.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=wWbOy4c0Sps"
   },
-  {
-    "id": "geo-3",
-    "version": 2,
-    "title": "The Globe and Coordinates",
-    "difficulty": "medium",
-    "estimatedMinutes": 35,
-    "syncBy": null,
-    "content": {
-      "text": "# The Globe and Coordinates\n\nA globe is a spherical model of the Earth. It shows the true shape of our planet and represents continents, oceans, and countries accurately.\n\nUnlike flat maps, a globe gives a more realistic view of Earth.\n\n## Latitude\n\nLatitude lines are imaginary horizontal lines that run east-west.\n\n- They measure distance north or south of the Equator.\n- The Equator is at 0° latitude.\n- Latitude ranges from 0° to 90° North and 0° to 90° South.\n\nImportant latitudes include:\n- Equator (0°)\n- Tropic of Cancer (23.5° N)\n- Tropic of Capricorn (23.5° S)\n- Arctic Circle (66.5° N)\n- Antarctic Circle (66.5° S)\n\n## Longitude\n\nLongitude lines are imaginary vertical lines that run north-south.\n\n- They measure distance east or west of the Prime Meridian.\n- The Prime Meridian is at 0° longitude.\n- Longitude ranges from 0° to 180° East and 0° to 180° West.\n\n## Coordinates\n\nCoordinates are formed by combining latitude and longitude. They help locate any place on Earth accurately.\n\nExample: New Delhi is approximately at 28.7° N latitude and 77.2° E longitude.\n\n## Importance of Coordinates\n\n- Help in navigation\n- Used in GPS systems\n- Help pilots and sailors travel safely\n- Used to determine time zones",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=H-fZnKFs6-E"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "Which map type shows mountains and rivers?",
+      "options": ["Physical map", "Political map", "Thematic map", "Road map"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "What is the equator?",
-        "options": [
-          "A line at 0° latitude",
-          "The North Pole",
-          "A continent",
-          "A mountain"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "Longitude lines run in which direction?",
-        "options": [
-          "North-south",
-          "East-west",
-          "Diagonally",
-          "Circular"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p3",
-        "type": "mcq",
-        "question": "Latitude lines measure distance from:",
-        "options": [
-          "Equator",
-          "Prime Meridian",
-          "North Pole",
-          "South Pole"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p4",
-        "type": "mcq",
-        "question": "The Prime Meridian is at:",
-        "options": [
-          "0° longitude",
-          "90° longitude",
-          "23.5° latitude",
-          "180° latitude"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p5",
-        "type": "mcq",
-        "question": "Which device uses coordinates?",
-        "options": [
-          "GPS",
-          "Television",
-          "Fan",
-          "Radio"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p6",
-        "type": "mcq",
-        "question": "Latitude ranges from:",
-        "options": [
-          "0° to 90°",
-          "0° to 360°",
-          "90° to 180°",
-          "10° to 50°"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "What does latitude measure?",
-        "options": [
-          "Distance from the equator",
-          "Distance from the Prime Meridian",
-          "Height of mountains",
-          "Width of oceans"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a2",
-        "type": "mcq",
-        "question": "Longitude measures distance from:",
-        "options": [
-          "Prime Meridian",
-          "Equator",
-          "North Pole",
-          "Tropic of Cancer"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a3",
-        "type": "mcq",
-        "question": "Which circle lies at 23.5° N?",
-        "options": [
-          "Tropic of Cancer",
-          "Equator",
-          "Arctic Circle",
-          "Antarctic Circle"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a4",
-        "type": "mcq",
-        "question": "Coordinates help in:",
-        "options": [
-          "Finding exact location",
-          "Cooking",
-          "Drawing only",
-          "Decoration"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a5",
-        "type": "mcq",
-        "question": "The Arctic Circle lies in which hemisphere?",
-        "options": [
-          "Northern Hemisphere",
-          "Southern Hemisphere",
-          "Eastern Hemisphere",
-          "Western Hemisphere"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "What does map scale show?",
+      "options": ["Ratio of map distances to real distances", "The title of the map", "The colors used", "The size of the map"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Political maps show:",
+      "options": ["Countries and borders", "Mountain heights", "Population density", "Climate zones"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "geo-3",
+  "version": 1,
+  "title": "The Globe and Coordinates",
+  "difficulty": "medium",
+  "estimatedMinutes": 22,
+  "syncBy": null,
+  "content": {
+    "text": "# The Globe and Coordinates\n\nA globe is a spherical model of Earth. It shows the true shape and representation of Earth's surface.\n\nLatitude lines run east-west and measure distance from the equator (0° to 90°).\nLongitude lines run north-south and measure distance from the Prime Meridian.\n\nExample: New Delhi is at approximately 28.7° N latitude and 77.2° E longitude.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=H-fZnKFs6-E"
   },
-  {
-    "id": "geo-4",
-    "version": 2,
-    "title": "Continents and Oceans",
-    "difficulty": "easy",
-    "estimatedMinutes": 28,
-    "syncBy": null,
-    "content": {
-      "text": "# Continents and Oceans\n\nThe Earth is divided into large landmasses called continents and large water bodies called oceans.\n\n## Continents\n\nThere are 7 continents:\n- Asia (largest continent)\n- Africa\n- Europe\n- North America\n- South America\n- Australia (smallest continent)\n- Antarctica (coldest continent)\n\nContinents vary in size, population, and climate.\n\n## Oceans\n\nThere are 5 oceans:\n- Pacific Ocean (largest ocean)\n- Atlantic Ocean\n- Indian Ocean\n- Arctic Ocean\n- Southern Ocean\n\nOceans cover about 71% of the Earth's surface.\n\n## Importance of Continents and Oceans\n\n- Provide habitats for living organisms\n- Influence climate and weather\n- Support trade and transportation\n- Supply natural resources\n\nContinents are large land areas, while oceans are large bodies of saltwater.",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=QB0hPjdEW74"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "What is the equator?",
+      "options": ["A line at 0° latitude", "The North Pole", "A continent", "A mountain"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "How many continents are there?",
-        "options": [
-          "7",
-          "5",
-          "6",
-          "8"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "Which is the largest ocean?",
-        "options": [
-          "Pacific Ocean",
-          "Atlantic Ocean",
-          "Indian Ocean",
-          "Arctic Ocean"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p3",
-        "type": "mcq",
-        "question": "Which is the smallest continent?",
-        "options": [
-          "Australia",
-          "Asia",
-          "Africa",
-          "Europe"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p4",
-        "type": "mcq",
-        "question": "Which continent is the coldest?",
-        "options": [
-          "Antarctica",
-          "Africa",
-          "Asia",
-          "Europe"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p5",
-        "type": "mcq",
-        "question": "Oceans cover about how much of Earth?",
-        "options": [
-          "71%",
-          "30%",
-          "50%",
-          "90%"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p6",
-        "type": "mcq",
-        "question": "Which ocean lies between Africa and Australia?",
-        "options": [
-          "Indian Ocean",
-          "Pacific Ocean",
-          "Arctic Ocean",
-          "Southern Ocean"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Which continent is also a country?",
-        "options": [
-          "Australia",
-          "Africa",
-          "Asia",
-          "Europe"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a2",
-        "type": "mcq",
-        "question": "Which ocean is the smallest?",
-        "options": [
-          "Arctic Ocean",
-          "Pacific Ocean",
-          "Atlantic Ocean",
-          "Indian Ocean"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a3",
-        "type": "mcq",
-        "question": "Asia is the:",
-        "options": [
-          "Largest continent",
-          "Smallest continent",
-          "Coldest continent",
-          "Ocean"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a4",
-        "type": "mcq",
-        "question": "Continents are:",
-        "options": [
-          "Large landmasses",
-          "Large water bodies",
-          "Mountains",
-          "Rivers"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "a5",
-        "type": "mcq",
-        "question": "Oceans contain:",
-        "options": [
-          "Saltwater",
-          "Freshwater only",
-          "Sand only",
-          "Mountains"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "Longitude lines run in which direction?",
+      "options": ["North-south", "East-west", "Diagonally", "Circular"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "What does latitude measure?",
+      "options": ["Distance from the equator", "Distance from the Prime Meridian", "Height of mountains", "Width of oceans"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "geo-4",
+  "version": 1,
+  "title": "Continents and Oceans",
+  "difficulty": "easy",
+  "estimatedMinutes": 18,
+  "syncBy": null,
+  "content": {
+    "text": "# Continents and Oceans\n\nThere are 7 continents: Asia, Africa, Europe, North America, South America, Australia, and Antarctica.\n\nThere are 5 oceans: Pacific, Atlantic, Indian, Arctic, and Southern Ocean.\n\nContinents are large landmasses, while oceans are large bodies of saltwater.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=QB0hPjdEW74"
   },
-  {
-    "id": "geo-5",
-    "version": 1,
-    "title": "Earth's Rotation and Revolution",
-    "difficulty": "medium",
-    "estimatedMinutes": 20,
-    "syncBy": null,
-    "content": {
-      "text": "# Earth's Rotation and Revolution\n\nRotation: Earth spins on its axis from west to east, completing one rotation in 24 hours. This causes day and night.\n\nRevolution: Earth orbits around the Sun, taking about 365 days to complete one orbit. This causes seasons.\n\nExample: Because of Earth's tilt during revolution, different parts receive more or less sunlight, creating seasons.",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=E3-3VFPiA9I"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "How many continents are there?",
+      "options": ["7", "5", "6", "8"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "How long does Earth take to complete one rotation?",
-        "options": [
-          "24 hours",
-          "365 days",
-          "12 hours",
-          "30 days"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "What causes day and night?",
-        "options": [
-          "Earth's rotation",
-          "Earth's revolution",
-          "Moon's movement",
-          "Sun's movement"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "How long does Earth take to complete one revolution around the Sun?",
-        "options": [
-          "365 days",
-          "24 hours",
-          "30 days",
-          "12 months"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "Which is the largest ocean?",
+      "options": ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Which continent is also a country?",
+      "options": ["Australia", "Africa", "Asia", "Europe"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "geo-5",
+  "version": 1,
+  "title": "Earth's Rotation and Revolution",
+  "difficulty": "medium",
+  "estimatedMinutes": 20,
+  "syncBy": null,
+  "content": {
+    "text": "# Earth's Rotation and Revolution\n\nRotation: Earth spins on its axis from west to east, completing one rotation in 24 hours. This causes day and night.\n\nRevolution: Earth orbits around the Sun, taking about 365 days to complete one orbit. This causes seasons.\n\nExample: Because of Earth's tilt during revolution, different parts receive more or less sunlight, creating seasons.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=E3-3VFPiA9I"
   },
-  {
-    "id": "geo-6",
-    "version": 1,
-    "title": "Seasons and Weather",
-    "difficulty": "easy",
-    "estimatedMinutes": 17,
-    "syncBy": null,
-    "content": {
-      "text": "# Seasons and Weather\n\nSeasons are caused by the tilt of Earth's axis during its revolution around the Sun.\n\nThe four seasons are:\n- Spring: Mild temperatures, plants grow\n- Summer: Hot, longest days\n- Autumn: Temperature drops, leaves fall\n- Winter: Cold, shortest days\n\nWeather describes short-term atmospheric conditions like temperature, rainfall, and wind.",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=uSIPqYGQNTM"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "How long does Earth take to complete one rotation?",
+      "options": ["24 hours", "365 days", "12 hours", "30 days"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "Which season has the shortest days?",
-        "options": [
-          "Winter",
-          "Summer",
-          "Spring",
-          "Autumn"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "What causes seasons?",
-        "options": [
-          "Earth's tilt during revolution",
-          "Moon's phases",
-          "Ocean currents",
-          "Wind patterns"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "The season when plants grow and flowers bloom:",
-        "options": [
-          "Spring",
-          "Summer",
-          "Autumn",
-          "Winter"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "What causes day and night?",
+      "options": ["Earth's rotation", "Earth's revolution", "Moon's movement", "Sun's movement"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "How long does Earth take to complete one revolution around the Sun?",
+      "options": ["365 days", "24 hours", "30 days", "12 months"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "geo-6",
+  "version": 1,
+  "title": "Seasons and Weather",
+  "difficulty": "easy",
+  "estimatedMinutes": 17,
+  "syncBy": null,
+  "content": {
+    "text": "# Seasons and Weather\n\nSeasons are caused by the tilt of Earth's axis during its revolution around the Sun.\n\nThe four seasons are:\n- Spring: Mild temperatures, plants grow\n- Summer: Hot, longest days\n- Autumn: Temperature drops, leaves fall\n- Winter: Cold, shortest days\n\nWeather describes short-term atmospheric conditions like temperature, rainfall, and wind.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=uSIPqYGQNTM"
   },
-  {
-    "id": "geo-7",
-    "version": 1,
-    "title": "Climate Zones",
-    "difficulty": "medium",
-    "estimatedMinutes": 21,
-    "syncBy": null,
-    "content": {
-      "text": "# Climate Zones\n\nClimate is the average weather pattern of a place over many years.\n\nMain climate zones:\n- Tropical: Hot and humid, near the equator\n- Temperate: Mild, with clear seasons, between tropics and poles\n- Polar: Very cold, near the poles\n\nClimate affects vegetation, wildlife, and human activities in different regions.",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=wIOaHpRFWj0"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "Which season has the shortest days?",
+      "options": ["Winter", "Summer", "Spring", "Autumn"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "What is climate?",
-        "options": [
-          "Average weather over many years",
-          "Weather of one day",
-          "Storm patterns",
-          "Wind direction"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "Which climate zone is near the equator?",
-        "options": [
-          "Tropical",
-          "Temperate",
-          "Polar",
-          "Arctic"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Polar regions are characterized by:",
-        "options": [
-          "Very cold temperatures",
-          "Hot and humid weather",
-          "Mild seasons",
-          "Frequent rain"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "What causes seasons?",
+      "options": ["Earth's tilt during revolution", "Moon's phases", "Ocean currents", "Wind patterns"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "The season when plants grow and flowers bloom:",
+      "options": ["Spring", "Summer", "Autumn", "Winter"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "geo-7",
+  "version": 1,
+  "title": "Climate Zones",
+  "difficulty": "medium",
+  "estimatedMinutes": 21,
+  "syncBy": null,
+  "content": {
+    "text": "# Climate Zones\n\nClimate is the average weather pattern of a place over many years.\n\nMain climate zones:\n- Tropical: Hot and humid, near the equator\n- Temperate: Mild, with clear seasons, between tropics and poles\n- Polar: Very cold, near the poles\n\nClimate affects vegetation, wildlife, and human activities in different regions.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=wIOaHpRFWj0"
   },
-  {
-    "id": "geo-8",
-    "version": 1,
-    "title": "Natural Resources",
-    "difficulty": "easy",
-    "estimatedMinutes": 19,
-    "syncBy": null,
-    "content": {
-      "text": "# Natural Resources\n\nNatural resources are materials from nature that humans use:\n\nTypes of resources:\n- Renewable: Can be replenished (water, forests, wind, solar energy)\n- Non-renewable: Limited supply (fossil fuels like coal, oil, gas)\n\nWe must use natural resources carefully to preserve them for the future.",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=00PeGueYOtM"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "What is climate?",
+      "options": ["Average weather over many years", "Weather of one day", "Storm patterns", "Wind direction"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "Which is a renewable resource?",
-        "options": [
-          "Wind energy",
-          "Coal",
-          "Oil",
-          "Natural gas"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "Which is a non-renewable resource?",
-        "options": [
-          "Coal",
-          "Water",
-          "Forests",
-          "Solar energy"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Natural resources that can be replenished are called:",
-        "options": [
-          "Renewable resources",
-          "Non-renewable resources",
-          "Fossil fuels",
-          "Minerals"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "Which climate zone is near the equator?",
+      "options": ["Tropical", "Temperate", "Polar", "Arctic"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Polar regions are characterized by:",
+      "options": ["Very cold temperatures", "Hot and humid weather", "Mild seasons", "Frequent rain"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "geo-8",
+  "version": 1,
+  "title": "Natural Resources",
+  "difficulty": "easy",
+  "estimatedMinutes": 19,
+  "syncBy": null,
+  "content": {
+    "text": "# Natural Resources\n\nNatural resources are materials from nature that humans use:\n\nTypes of resources:\n- Renewable: Can be replenished (water, forests, wind, solar energy)\n- Non-renewable: Limited supply (fossil fuels like coal, oil, gas)\n\nWe must use natural resources carefully to preserve them for the future.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=00PeGueYOtM"
   },
-  {
-    "id": "geo-9",
-    "version": 1,
-    "title": "Mountains, Plains, and Plateaus",
-    "difficulty": "easy",
-    "estimatedMinutes": 16,
-    "syncBy": null,
-    "content": {
-      "text": "# Mountains, Plains, and Plateaus\n\nLandforms are physical features of Earth's surface:\n\n- Mountains: Very high elevated lands with steep slopes\n- Plains: Flat, low areas of land\n- Plateaus: Raised, flat-topped areas higher than surrounding land\n\nThese landforms are created by tectonic movements and erosion over time.",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=nDpjwHzwEsU"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "Which is a renewable resource?",
+      "options": ["Wind energy", "Coal", "Oil", "Natural gas"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "What is a plateau?",
-        "options": [
-          "A raised, flat-topped area",
-          "A very high mountain",
-          "A low-lying area",
-          "A water body"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "Plains are characterized by:",
-        "options": [
-          "Flat and low areas",
-          "High elevation",
-          "Steep slopes",
-          "Deep valleys"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Mountains have:",
-        "options": [
-          "High elevation and steep slopes",
-          "Flat surfaces",
-          "Low elevation",
-          "Gentle slopes"
-        ],
-        "correct": 0
-      }
-    ]
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "Which is a non-renewable resource?",
+      "options": ["Coal", "Water", "Forests", "Solar energy"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Natural resources that can be replenished are called:",
+      "options": ["Renewable resources", "Non-renewable resources", "Fossil fuels", "Minerals"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "geo-9",
+  "version": 1,
+  "title": "Mountains, Plains, and Plateaus",
+  "difficulty": "easy",
+  "estimatedMinutes": 16,
+  "syncBy": null,
+  "content": {
+    "text": "# Mountains, Plains, and Plateaus\n\nLandforms are physical features of Earth's surface:\n\n- Mountains: Very high elevated lands with steep slopes\n- Plains: Flat, low areas of land\n- Plateaus: Raised, flat-topped areas higher than surrounding land\n\nThese landforms are created by tectonic movements and erosion over time.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=nDpjwHzwEsU"
   },
-  {
-    "id": "geo-10",
-    "version": 1,
-    "title": "Rivers and Water Bodies",
-    "difficulty": "easy",
-    "estimatedMinutes": 17,
-    "syncBy": null,
-    "content": {
-      "text": "# Rivers and Water Bodies\n\nWater bodies are important features of Earth:\n\n- Rivers: Flowing fresh water that originates from mountains or springs\n- Lakes: Bodies of water surrounded by land\n- Oceans: Largest saltwater bodies\n- Seas: Smaller saltwater bodies connected to oceans\n\nRivers provide water for drinking, irrigation, and transportation.",
-      "audio": null,
-      "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
-      "videoRef": "https://www.youtube.com/watch?v=3GyYrwIIaKQ"
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "What is a plateau?",
+      "options": ["A raised, flat-topped area", "A very high mountain", "A low-lying area", "A water body"],
+      "correct": 0
     },
-    "practice": [
-      {
-        "id": "p1",
-        "type": "mcq",
-        "question": "What is a river?",
-        "options": [
-          "Flowing fresh water",
-          "Bodies of water surrounded by land",
-          "Saltwater body",
-          "A mountain"
-        ],
-        "correct": 0
-      },
-      {
-        "id": "p2",
-        "type": "mcq",
-        "question": "Lakes are:",
-        "options": [
-          "Bodies of water surrounded by land",
-          "Flowing water",
-          "Oceans",
-          "Rain water"
-        ],
-        "correct": 0
-      }
-    ],
-    "assessment": [
-      {
-        "id": "a1",
-        "type": "mcq",
-        "question": "Rivers are important for:",
-        "options": [
-          "Drinking water, irrigation, transportation",
-          "Sport only",
-          "Building cities",
-          "None"
-        ],
-        "correct": 0
-      }
-    ]
-  }
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "Plains are characterized by:",
+      "options": ["Flat and low areas", "High elevation", "Steep slopes", "Deep valleys"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Mountains have:",
+      "options": ["High elevation and steep slopes", "Flat surfaces", "Low elevation", "Gentle slopes"],
+      "correct": 0
+    }
+  ]
+},
+
+{
+  "id": "geo-10",
+  "version": 1,
+  "title": "Rivers and Water Bodies",
+  "difficulty": "easy",
+  "estimatedMinutes": 17,
+  "syncBy": null,
+  "content": {
+    "text": "# Rivers and Water Bodies\n\nWater bodies are important features of Earth:\n\n- Rivers: Flowing fresh water that originates from mountains or springs\n- Lakes: Bodies of water surrounded by land\n- Oceans: Largest saltwater bodies\n- Seas: Smaller saltwater bodies connected to oceans\n\nRivers provide water for drinking, irrigation, and transportation.",
+    "audio": null,
+    "image": "https://image.slidesharecdn.com/introtoenvisci-100621041236-phpapp01/75/Intro-to-Environmental-Science-7-2048.jpg",
+    "videoRef": "https://www.youtube.com/watch?v=3GyYrwIIaKQ"
+  },
+  "practice": [
+    {
+      "id": "p1",
+      "type": "mcq",
+      "question": "What is a river?",
+      "options": ["Flowing fresh water", "Bodies of water surrounded by land", "Saltwater body", "A mountain"],
+      "correct": 0
+    },
+    {
+      "id": "p2",
+      "type": "mcq",
+      "question": "Lakes are:",
+      "options": ["Bodies of water surrounded by land", "Flowing water", "Oceans", "Rain water"],
+      "correct": 0
+    }
+  ],
+  "assessment": [
+    {
+      "id": "a1",
+      "type": "mcq",
+      "question": "Rivers are important for:",
+      "options": ["Drinking water, irrigation, transportation", "Sport only", "Building cities", "None"],
+      "correct": 0
+    }
+  ]
+}
+
 ]
