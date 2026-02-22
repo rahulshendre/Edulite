@@ -544,6 +544,97 @@
   color: var(--text-muted);
 }
 
+/* ===== Subject select (school mode) ===== */
+.subject-select-screen {
+  text-align: left;
+}
+
+.subject-select-screen h2 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-2);
+}
+
+.subject-select-screen .subject-select-intro {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--space-5);
+}
+
+.subject-select-screen .subject-select-empty {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--space-5);
+}
+
+.subject-select-screen .subject-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.subject-select-screen .subject-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: var(--space-4) var(--space-5);
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.subject-select-screen .subject-card:hover {
+  border-color: var(--primary);
+  background: var(--primary-muted);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.subject-select-screen .subject-label {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--text);
+}
+
+.subject-select-screen .subject-back {
+  margin-top: var(--space-5);
+  padding: 0;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.subject-select-screen .subject-back:hover {
+  color: var(--primary);
+}
+
+.packet-list .packet-list-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.packet-list .change-subject {
+  padding: 0;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.packet-list .change-subject:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
 /* ===== App header (mode + logout) ===== */
 .app-header {
   display: flex;

@@ -8,7 +8,7 @@ import { log, logError } from '../utils/debug'
 const PACKETS_JSON_URL = (typeof import.meta.env?.BASE_URL === 'string' ? import.meta.env.BASE_URL : '') + 'packets/packets.json'
 const ASSIGNMENTS_JSON_URL = (typeof import.meta.env?.BASE_URL === 'string' ? import.meta.env.BASE_URL : '') + 'packets/assignments.json'
 
-export default function PacketList({ userId, userPath, mode, onOpenPacket, onChangeContentMode, locale }) {
+export default function PacketList({ userId, userPath, mode, subject, onOpenPacket, onChangeContentMode, onChangeSubject, locale }) {
   const [packets, setPackets] = useState([])
   const [assignments, setAssignments] = useState([]) // { packetId, syncBy, courseName, maxTier? }[]
   const [progressMap, setProgressMap] = useState({})
@@ -98,7 +98,10 @@ export default function PacketList({ userId, userPath, mode, onOpenPacket, onCha
     return () => { cancelled = true }
   }, [locale, packets])
 
-  const assignmentByPacketId = assignments.reduce((acc, a) => ({ ...acc, [a.packetId]: a }), {})
+  const filteredAssignments = subject
+    ? assignments.filter((a) => a.subject === subject)
+    : assignments
+  const assignmentByPacketId = filteredAssignments.reduce((acc, a) => ({ ...acc, [a.packetId]: a }), {})
   const displayPackets = mode === 'school'
     ? packets.filter((p) => assignmentByPacketId[p.id])
     : packets
@@ -144,17 +147,24 @@ export default function PacketList({ userId, userPath, mode, onOpenPacket, onCha
 
   return (
     <div className="packet-list">
-      <h1>{mode === 'school' ? 'School mode' : 'Study mode'}</h1>
+      <h1>{mode === 'school' ? (subject ? `${subject}` : 'School mode') : 'Study mode'}</h1>
       <p className="subtitle">
         {mode === 'school'
           ? 'Assigned packets. Sync your progress before the sync-by date.'
           : 'Tap a packet to learn offline.'}
       </p>
-      {onChangeContentMode && (
-        <button type="button" className="change-content-mode" onClick={onChangeContentMode}>
-          Change content mode
-        </button>
-      )}
+      <div className="packet-list-actions">
+        {onChangeContentMode && (
+          <button type="button" className="change-content-mode" onClick={onChangeContentMode}>
+            Change content mode
+          </button>
+        )}
+        {onChangeSubject && (
+          <button type="button" className="change-subject" onClick={onChangeSubject}>
+            Change subject
+          </button>
+        )}
+      </div>
       <p className="sync-hint">Progress is saved on your device. Sync when you have connection to send it to your school.</p>
       <div className="sync-row">
         <button

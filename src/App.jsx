@@ -11,6 +11,7 @@ import SchoolTeacherLogin from './components/SchoolTeacherLogin'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
 import ContentModeScreen from './components/ContentModeScreen'
+import SubjectSelect from './components/SubjectSelect'
 import PacketList from './components/PacketList'
 import PacketView from './components/PacketView'
 import Profile from './components/Profile'
@@ -25,6 +26,7 @@ import './App.css'
 const SESSION_PATH_KEY = 'edulite_path'
 const SESSION_SCHOOL_ROLE_KEY = 'edulite_school_role'
 const SESSION_SCHOOL_KEY = 'edulite_school'
+const SESSION_SCHOOL_SUBJECT_KEY = 'edulite_school_subject'
 
 function getStoredPath() {
   try {
@@ -50,6 +52,13 @@ function getStoredSchool() {
     return null
   }
 }
+function getStoredSubject() {
+  try {
+    return sessionStorage.getItem(SESSION_SCHOOL_SUBJECT_KEY) || null
+  } catch {
+    return null
+  }
+}
 
 registerSW({ immediate: true })
 
@@ -59,6 +68,7 @@ export default function App() {
   const [schoolRole, setSchoolRole] = useState(getStoredSchoolRole)
   const [selectedSchool, setSelectedSchool] = useState(getStoredSchool)
   const [defaultContentTier, setDefaultContentTier] = useState(getDefaultTier)
+  const [selectedSubject, setSelectedSubject] = useState(getStoredSubject)
   const [openPacketId, setOpenPacketId] = useState(null)
   const [openAssignment, setOpenAssignment] = useState(null)
   const [mode, setMode] = useState('study')
@@ -97,6 +107,7 @@ export default function App() {
     setPathChoice(null)
     setSchoolRole(null)
     setSelectedSchool(null)
+    setSelectedSubject(null)
     setDefaultContentTier(null)
     setOpenPacketId(null)
     setOpenAssignment(null)
@@ -173,8 +184,24 @@ export default function App() {
   const handleChangeContentMode = useCallback(() => {
     clearDefaultTier()
     setDefaultContentTier(null)
+    setSelectedSubject(null)
     setShowProfile(false)
     log('App: change content mode (tier cleared)')
+  }, [])
+
+  const handleSubjectSelect = useCallback((subject) => {
+    setSelectedSubject(subject)
+    try { sessionStorage.setItem(SESSION_SCHOOL_SUBJECT_KEY, subject) } catch {}
+  }, [])
+  const handleChangeSubject = useCallback(() => {
+    setSelectedSubject(null)
+    try { sessionStorage.removeItem(SESSION_SCHOOL_SUBJECT_KEY) } catch {}
+  }, [])
+  const handleSubjectBack = useCallback(() => {
+    clearDefaultTier()
+    setDefaultContentTier(null)
+    setSelectedSubject(null)
+    try { sessionStorage.removeItem(SESSION_SCHOOL_SUBJECT_KEY) } catch {}
   }, [])
 
   const handleOpenPacket = (packetId, assignment) => {
@@ -340,14 +367,23 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <PacketList
-                userId={user?.id}
-                userPath={user?.path}
-                mode={mode}
-                onOpenPacket={handleOpenPacket}
-                onChangeContentMode={handleChangeContentMode}
-                locale={locale}
-              />
+              {mode === 'school' && !selectedSubject ? (
+                <SubjectSelect
+                  onSelect={handleSubjectSelect}
+                  onBack={handleSubjectBack}
+                />
+              ) : (
+                <PacketList
+                  userId={user?.id}
+                  userPath={user?.path}
+                  mode={mode}
+                  subject={mode === 'school' ? selectedSubject : null}
+                  onOpenPacket={handleOpenPacket}
+                  onChangeContentMode={handleChangeContentMode}
+                  onChangeSubject={mode === 'school' ? handleChangeSubject : null}
+                  locale={locale}
+                />
+              )}
             </>
           )}
 
